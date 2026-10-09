@@ -529,7 +529,7 @@ export default function AdminDashboardPage() {
                   title="Back to Dashboard Overview"
                 >
                   <ArrowLeft className="w-4 h-4 text-neutral-500 group-hover:-translate-x-0.5 transition-transform" />
-                  <span>Back to Dashboard</span>
+                  <span>Back</span>
                 </button>
 
                 <div className="min-w-0">

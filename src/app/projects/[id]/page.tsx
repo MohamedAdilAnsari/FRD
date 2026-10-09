@@ -153,7 +153,7 @@ export default function ProjectDetailsPage({ params }: { params: { id: string } 
             title="Return to dashboard"
           >
             <ArrowLeft className="w-3.5 h-3.5" />
-            <span>Back to Dashboard</span>
+            <span>Back</span>
           </Link>
         </div>
 
