@@ -1535,7 +1535,7 @@ function WizardContent() {
             title="Save selected options and return to dashboard"
           >
             <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-0.5" />
-            <span>Back to Dashboard</span>
+            <span>Back</span>
           </button>
           {draftProjectId && (
             <button

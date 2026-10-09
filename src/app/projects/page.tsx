@@ -485,40 +485,40 @@ export default function ClientDashboard() {
                             const status = (p.status || '').toLowerCase();
                             if (status === 'approved') {
                               return (
-                                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-emerald-100/90 text-emerald-800 border border-emerald-300/90 font-bold text-xs shadow-2xs">
+                                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-emerald-100 text-emerald-900 border border-emerald-300 font-extrabold text-[11px] shadow-2xs">
                                   <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600 shrink-0" />
-                                  <span>Approved by Admin</span>
+                                  <span>APPROVED</span>
                                 </span>
                               );
                             }
                             if (status === 'in_review' || status === 'reviewed') {
                               return (
-                                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-amber-100/90 text-amber-800 border border-amber-300/90 font-semibold text-xs">
-                                  <Clock className="w-3.5 h-3.5 text-amber-600 shrink-0 animate-pulse" />
-                                  <span>Under Admin Review</span>
+                                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-purple-100 text-purple-900 border border-purple-300 font-extrabold text-[11px] shadow-2xs">
+                                  <Clock className="w-3.5 h-3.5 text-purple-600 shrink-0 animate-pulse" />
+                                  <span>IN REVIEW</span>
                                 </span>
                               );
                             }
                             if (status === 'submitted') {
                               return (
-                                <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-100/90 text-purple-800 border border-purple-300/90 font-semibold text-xs">
-                                  <Sparkles className="w-3.5 h-3.5 text-purple-600 shrink-0" />
-                                  <span>Submitted to Admin</span>
+                                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-100 text-indigo-900 border border-indigo-300 font-extrabold text-[11px] shadow-2xs">
+                                  <Sparkles className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
+                                  <span>SUBMITTED</span>
                                 </span>
                               );
                             }
-                            if (isInProgress) {
+                            if (status === 'archived') {
                               return (
-                                <span className="inline-flex items-center gap-1.5 text-amber-600 font-semibold text-xs">
-                                  <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
-                                  <span>In Progress</span>
+                                <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-rose-100 text-rose-900 border border-rose-300 font-extrabold text-[11px] shadow-2xs">
+                                  <FileText className="w-3.5 h-3.5 text-rose-600 shrink-0" />
+                                  <span>ARCHIVED</span>
                                 </span>
                               );
                             }
                             return (
-                              <span className="inline-flex items-center gap-1.5 text-emerald-600 font-semibold text-xs">
-                                <span className="w-1.5 h-1.5 rounded-full bg-emerald-500" />
-                                <span>Completed</span>
+                              <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-100 text-amber-900 border border-amber-300 font-extrabold text-[11px] shadow-2xs">
+                                <span className="w-2 h-2 rounded-full bg-amber-500 shrink-0 animate-pulse" />
+                                <span>DRAFT</span>
                               </span>
                             );
                           })()}

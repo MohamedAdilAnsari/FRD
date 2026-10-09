@@ -459,12 +459,16 @@ export default function AdminDashboardPage() {
                     >
                       <div className="space-y-3">
                         <div className="flex items-start justify-between gap-3">
-                          <span className={`px-2.5 py-1 rounded-full text-[10px] font-mono font-bold uppercase shrink-0 ${
+                          <span className={`px-2.5 py-1 rounded-full text-[10px] font-mono font-extrabold uppercase shrink-0 shadow-2xs ${
                             p.status === 'approved'
-                              ? 'bg-emerald-100 text-emerald-800 border border-emerald-200'
-                              : p.status === 'in_review'
-                              ? 'bg-amber-100 text-amber-800 border border-amber-200'
-                              : 'bg-neutral-100 text-neutral-700 border border-neutral-200'
+                              ? 'bg-emerald-100 text-emerald-900 border border-emerald-300'
+                              : p.status === 'submitted'
+                              ? 'bg-indigo-100 text-indigo-900 border border-indigo-300'
+                              : p.status === 'in_review' || p.status === 'reviewed'
+                              ? 'bg-purple-100 text-purple-900 border border-purple-300'
+                              : p.status === 'archived'
+                              ? 'bg-rose-100 text-rose-900 border border-rose-300'
+                              : 'bg-amber-100 text-amber-900 border border-amber-300'
                           }`}>
                             {p.status ? p.status.replace('_', ' ') : 'Draft'}
                           </span>
