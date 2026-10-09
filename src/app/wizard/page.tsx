@@ -1535,7 +1535,7 @@ function WizardContent() {
             title="Save selected options and return to dashboard"
           >
             <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-0.5" />
-            <span>Back</span>
+            <span>Back to Dashboard</span>
           </button>
           {draftProjectId && (
             <button
@@ -1855,7 +1855,7 @@ function WizardContent() {
                   <div className="space-y-1">
                     <div className="flex items-center gap-3">
                       <div className="p-2.5 rounded-2xl bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-600 text-white shadow-md shadow-indigo-500/25 shrink-0">
-                        <Sparkles className="w-5 h-5 text-amber-300" />
+                        <FileText className="w-5 h-5 text-white" />
                       </div>
                       <div>
                         <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-indigo-950 via-purple-950 to-slate-900 bg-clip-text text-transparent">
@@ -1881,10 +1881,7 @@ function WizardContent() {
                         <span>Redefining with AI...</span>
                       </>
                     ) : (
-                      <>
-                        <Sparkles className="w-4 h-4 text-amber-300" />
-                        <span>Redefine with AI</span>
-                      </>
+                      <span>Redefine with AI</span>
                     )}
                   </button>
                 </div>
@@ -2790,7 +2787,6 @@ function WizardContent() {
                     onClick={handleTriggerAIGeneration}
                     className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 via-indigo-600 via-pink-600 to-rose-600 hover:opacity-95 text-white text-xs font-extrabold rounded-xl shadow-xl shadow-purple-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                   >
-                    <Sparkles className="w-4 h-4 mr-2 text-amber-300 animate-pulse" />
                     <span>Synthesize with AI</span>
                   </button>
                 </div>
