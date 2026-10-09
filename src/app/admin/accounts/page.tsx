@@ -20,7 +20,6 @@ import {
   ChevronDown,
   X,
   ArrowLeft,
-  Sparkles,
   CheckCircle2,
   Filter
 } from 'lucide-react';

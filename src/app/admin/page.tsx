@@ -12,7 +12,6 @@ import {
   Clock, 
   Building, 
   Save, 
-  Sparkles, 
   Plus,
   Loader2, 
   Check, 
@@ -556,9 +555,7 @@ export default function AdminDashboardPage() {
                 >
                   {isRegeneratingAI ? (
                     <Loader2 className="w-3.5 h-3.5 animate-spin text-purple-600" />
-                  ) : (
-                    <Sparkles className="w-3.5 h-3.5 text-purple-600" />
-                  )}
+                  ) : null}
                   <span>AI Refine</span>
                 </button>
 
@@ -952,10 +949,7 @@ export default function AdminDashboardPage() {
                                 <span>Generating AI Flows...</span>
                               </>
                             ) : (
-                              <>
-                                <Sparkles className="w-3.5 h-3.5" />
-                                <span>Auto-Generate AI Flows</span>
-                              </>
+                              <span>Auto-Generate AI Flows</span>
                             )}
                           </button>
                         </div>

@@ -15,7 +15,6 @@ import {
   LayoutGrid,
   List,
   Clock,
-  Sparkles,
   ShieldCheck,
   CheckCircle2,
   Cpu,
@@ -272,7 +271,6 @@ export default function ClientDashboard() {
               href="/wizard?new=true"
               className="px-4 py-2 rounded-full bg-white hover:bg-stone-50 text-stone-900 font-semibold text-xs flex items-center justify-center gap-2 border border-stone-300 hover:border-stone-400 shadow-2xs hover:shadow-xs transition-all cursor-pointer group"
             >
-              <Sparkles className="w-3.5 h-3.5 text-violet-600" />
               <span>Create Specification</span>
               <Plus className="w-3.5 h-3.5 text-stone-400 group-hover:rotate-90 group-hover:text-stone-800 transition-transform" />
             </Link>
@@ -459,7 +457,6 @@ export default function ClientDashboard() {
                       href="/wizard?new=true"
                       className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white hover:bg-stone-50 text-stone-900 text-xs font-semibold border border-stone-300 hover:border-stone-400 shadow-2xs transition-all cursor-pointer"
                     >
-                      <Sparkles className="w-3.5 h-3.5 text-violet-600" />
                       <span>Launch Scoping Wizard</span>
                     </Link>
                   )}
@@ -502,7 +499,6 @@ export default function ClientDashboard() {
                             if (status === 'submitted') {
                               return (
                                 <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-indigo-100 text-indigo-900 border border-indigo-300 font-extrabold text-[11px] shadow-2xs">
-                                  <Sparkles className="w-3.5 h-3.5 text-indigo-600 shrink-0" />
                                   <span>SUBMITTED</span>
                                 </span>
                               );
@@ -674,7 +670,6 @@ export default function ClientDashboard() {
                                   if (status === 'submitted') {
                                     return (
                                       <span className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full bg-purple-100/90 text-purple-800 border border-purple-300/90 font-semibold text-xs">
-                                        <Sparkles className="w-3.5 h-3.5 text-purple-600 shrink-0" />
                                         <span>Submitted to Admin</span>
                                       </span>
                                     );

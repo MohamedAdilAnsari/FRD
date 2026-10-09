@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { X, Sparkles, Check, ArrowRight, Calendar, Clock, Video, ShieldCheck, Mail, User, Building, Send } from 'lucide-react';
+import { X, Check, ArrowRight, Calendar, Clock, Video, ShieldCheck, Mail, User, Building, Send } from 'lucide-react';
 import { HypecraftLogo } from './HypecraftLogo';
 
 interface BookingModalProps {
@@ -96,7 +96,6 @@ export const BookingModal: React.FC<BookingModalProps> = ({
                 {/* Header */}
                 <div className="mb-8">
                   <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/10 text-xs font-medium text-[#aa94ff] mb-3">
-                    <Sparkles className="w-3.5 h-3.5" />
                     <span>Free 30-Min Growth Strategy Session</span>
                   </div>
                   <h3 className="text-2xl sm:text-3xl font-bold font-display tracking-tight text-white">

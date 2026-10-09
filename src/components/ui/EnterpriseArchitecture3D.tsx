@@ -3,7 +3,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import * as THREE from 'three';
 import gsap from 'gsap';
-import { Layers, Cpu, Database, Network, Sparkles, ChevronRight } from 'lucide-react';
+import { Layers, Cpu, Database, Network, ChevronRight } from 'lucide-react';
 
 interface TierData {
   name: string;
@@ -533,7 +533,6 @@ export const EnterpriseArchitecture3D: React.FC = () => {
 
       {/* Hint Badge (Bottom Center) */}
       <div className="absolute bottom-2 left-1/2 -translate-x-1/2 text-[10px] font-mono text-slate-400 pointer-events-none flex items-center gap-1.5 transition-opacity duration-300 group-hover:opacity-75">
-        <Sparkles className="w-3 h-3 text-indigo-500" />
         <span>Hover to explode architecture • Move cursor to inspect</span>
       </div>
     </div>

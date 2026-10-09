@@ -9,7 +9,6 @@ import { UserSession } from '@/types';
 import {
   ArrowRight,
   ArrowUpRight,
-  Sparkles,
   CheckCircle2,
   ChevronDown,
   Target,
@@ -227,7 +226,6 @@ export default function HomePage() {
                   href="/wizard"
                   className="w-full sm:w-auto px-8 py-4 rounded-full bg-gradient-to-r from-[#6b47ff] via-[#7c3aed] to-[#5833e6] hover:from-[#5833e6] hover:to-[#4a24db] text-white font-semibold text-sm sm:text-base flex items-center justify-center gap-2.5 shadow-[0_10px_25px_-5px_rgba(107,71,255,0.4)] hover:shadow-[0_15px_35px_-5px_rgba(107,71,255,0.6)] transition-all group cursor-pointer"
                 >
-                  <Sparkles className="w-4 h-4 text-white animate-pulse" />
                   <span>Launch Scoping Wizard</span>
                   <ArrowRight className="w-4 h-4 text-white/90 group-hover:translate-x-1 transition-transform" />
                 </Link>
@@ -516,7 +514,6 @@ export default function HomePage() {
                   href="/wizard"
                   className="w-full sm:w-auto px-6 py-3 rounded-full bg-stone-900 hover:bg-black text-white text-xs sm:text-sm font-semibold inline-flex items-center justify-center gap-2 shadow-md transition-all cursor-pointer"
                 >
-                  <Sparkles className="w-4 h-4 text-[#aa94ff]" />
                   <span>Launch Scoping Wizard</span>
                   <ArrowRight className="w-3.5 h-3.5 text-[#aa94ff]" />
                 </Link>
@@ -689,7 +686,6 @@ export default function HomePage() {
                   href="/wizard"
                   className="w-full sm:w-auto px-8 py-4 rounded-full bg-[#6b47ff] hover:bg-[#5833e6] text-white font-semibold text-sm sm:text-base flex items-center justify-center gap-2 shadow-md hover:shadow-lg transition-all cursor-pointer"
                 >
-                  <Sparkles className="w-4 h-4 text-white/90" />
                   <span>Launch Scoping Wizard</span>
                   <ArrowRight className="w-4 h-4 text-white/90" />
                 </Link>

@@ -2,7 +2,7 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import gsap from 'gsap';
-import { Sparkles, Terminal, Activity } from 'lucide-react';
+import { Terminal, Activity } from 'lucide-react';
 
 export const KineticBlueprintGSAP: React.FC = () => {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -485,7 +485,6 @@ export const KineticBlueprintGSAP: React.FC = () => {
 
         {/* Bottom Interactive Hint */}
         <div className="absolute bottom-3 left-1/2 -translate-x-1/2 font-mono text-[9px] text-stone-400 flex items-center gap-1.5 pointer-events-none">
-          <Sparkles className="w-2.5 h-2.5 text-indigo-500" />
           <span>Interactive GSAP Matrix • Click to Pulse</span>
         </div>
       </div>

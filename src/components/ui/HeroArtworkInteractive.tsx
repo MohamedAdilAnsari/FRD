@@ -3,7 +3,7 @@
 import React, { useRef, useState, useCallback } from 'react';
 import Image from 'next/image';
 import { motion, useMotionValue, useSpring, useTransform } from 'motion/react';
-import { CheckCircle2, Sparkles } from 'lucide-react';
+import { CheckCircle2 } from 'lucide-react';
 
 export function HeroArtworkInteractive() {
   const cardRef = useRef<HTMLDivElement>(null);
@@ -227,7 +227,6 @@ export function HeroArtworkInteractive() {
           }}
           className="absolute top-1/2 -right-4 -translate-y-1/2 bg-white/90 backdrop-blur-md border border-slate-200/80 shadow-[0_6px_16px_rgba(15,23,42,0.05)] px-2.5 py-1.5 rounded-lg hidden lg:flex items-center gap-1.5 z-30"
         >
-          <Sparkles className="w-3 h-3 text-amber-500" />
           <span className="text-[10px] font-mono font-medium text-slate-700">99.8% Precision</span>
         </motion.div>
       </motion.div>

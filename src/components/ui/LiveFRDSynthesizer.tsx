@@ -4,7 +4,6 @@ import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import Link from 'next/link';
 import {
-  Sparkles,
   CheckCircle2,
   ArrowRight,
   ShieldCheck,
@@ -178,11 +177,6 @@ export const LiveFRDSynthesizer: React.FC = () => {
                     isActive
                       ? 'bg-stone-900 text-white shadow-xs'
                       : 'bg-stone-100 hover:bg-stone-200/80 text-stone-600'
-                  }`}
-                >
-                  <Sparkles
-                    className={`w-3 h-3 ${isActive ? 'text-[#aa94ff]' : 'text-stone-400'}`}
-                  />
                   <span>{preset.chipLabel}</span>
                 </button>
               );

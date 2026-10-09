@@ -9,7 +9,6 @@ import {
   ShieldCheck,
   Check,
   Zap,
-  Sparkles,
   Server,
   Globe,
   Database,
@@ -141,7 +140,6 @@ export const HeroWorkstationMockup: React.FC<{ className?: string }> = ({ classN
                 <div className="p-4 sm:p-5 rounded-2xl bg-stone-50 border border-stone-200 flex flex-col md:flex-row md:items-center justify-between gap-4">
                   <div className="space-y-1">
                     <div className="flex items-center gap-2 text-[10px] font-mono uppercase tracking-widest text-[#6b47ff]">
-                      <Sparkles className="w-3 h-3" />
                       <span>Nutz Corporate 10-Section Standard</span>
                     </div>
                     <h4 className="text-base sm:text-lg font-bold font-display text-stone-900 tracking-tight">

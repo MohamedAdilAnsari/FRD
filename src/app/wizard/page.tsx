@@ -24,7 +24,6 @@ import {
   ArrowLeft, 
   Plus, 
   Search, 
-  Sparkles, 
   FileText, 
   Check, 
   Loader2,

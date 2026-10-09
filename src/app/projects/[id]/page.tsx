@@ -15,7 +15,6 @@ import {
   X,
   CheckCircle2,
   Clock,
-  Sparkles,
 } from 'lucide-react';
 import { OfficialNutzDocument } from '@/components/OfficialNutzDocument';
 import { DeleteConfirmModal } from '@/components/DeleteConfirmModal';
@@ -207,7 +206,6 @@ export default function ProjectDetailsPage({ params }: { params: { id: string } 
                   if (st === 'submitted') {
                     return (
                       <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-bold bg-purple-100/90 text-purple-800 border border-purple-300 shrink-0">
-                        <Sparkles className="w-3.5 h-3.5 text-purple-600" />
                         <span>Submitted to Admin</span>
                       </span>
                     );
