@@ -65,12 +65,12 @@ export const Footer: React.FC = () => {
           <div className="flex items-center gap-4 text-[11px]">
             <span className="flex items-center gap-1.5 text-stone-600">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-              <span className="font-mono">ISO 9001 & SOC-2 Aligned</span>
+              <span className="font-medium text-stone-600">ISO 9001 & SOC-2 Aligned</span>
             </span>
             <span className="text-stone-300">•</span>
             <a
               href="mailto:contact@nutz.in"
-              className="text-stone-500 hover:text-stone-900 transition-colors font-mono"
+              className="text-stone-500 hover:text-stone-900 transition-colors font-medium"
             >
               contact@nutz.in
             </a>
