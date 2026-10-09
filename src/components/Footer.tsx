@@ -59,18 +59,18 @@ export const Footer: React.FC = () => {
         </div>
 
         {/* Minimal Bottom Bar: Copyright & Compliance */}
-        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-400">
+        <div className="flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-stone-500 font-sans">
           <p>© {new Date().getFullYear()} Nutz Technovation Private Limited. All rights reserved.</p>
 
-          <div className="flex items-center gap-4 text-[11px]">
-            <span className="flex items-center gap-1.5 text-stone-600">
+          <div className="flex items-center gap-4 text-xs">
+            <span className="flex items-center gap-1.5 text-stone-500">
               <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-              <span className="font-medium text-stone-600">ISO 9001 & SOC-2 Aligned</span>
+              <span>ISO 9001 & SOC-2 Aligned</span>
             </span>
             <span className="text-stone-300">•</span>
             <a
               href="mailto:contact@nutz.in"
-              className="text-stone-500 hover:text-stone-900 transition-colors font-medium"
+              className="text-stone-500 hover:text-stone-900 transition-colors"
             >
               contact@nutz.in
             </a>
