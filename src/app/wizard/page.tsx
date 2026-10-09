@@ -1506,22 +1506,22 @@ function WizardContent() {
   const progressPercent = Math.min(100, Math.round((currentProgressStep / currentTotalSteps) * 100));
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-indigo-50/70 via-purple-50/40 to-blue-50/40 text-slate-900 font-sans pt-6 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50/70 via-sky-50/40 to-blue-50/40 text-slate-900 font-sans pt-6 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       
       {/* Background Ambient Color Glow Orbs */}
-      <div className="absolute top-10 left-10 w-96 h-96 bg-purple-400/20 rounded-full blur-[120px] pointer-events-none -z-10" />
-      <div className="absolute top-40 right-10 w-[30rem] h-[30rem] bg-indigo-400/20 rounded-full blur-[140px] pointer-events-none -z-10" />
-      <div className="absolute bottom-10 left-1/3 w-96 h-96 bg-blue-400/20 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute top-10 left-10 w-96 h-96 bg-blue-500/15 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute top-40 right-10 w-[30rem] h-[30rem] bg-sky-400/20 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute bottom-10 left-1/3 w-96 h-96 bg-blue-600/10 rounded-full blur-[120px] pointer-events-none -z-10" />
 
       {/* Background Architectural Grid Lines */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-15 -z-10">
-        <div className="absolute h-px bg-indigo-300" style={{ top: '15%', left: 0, right: 0 }}></div>
-        <div className="absolute h-px bg-indigo-300" style={{ top: '50%', left: 0, right: 0 }}></div>
-        <div className="absolute h-px bg-indigo-300" style={{ top: '85%', left: 0, right: 0 }}></div>
+        <div className="absolute h-px bg-blue-200" style={{ top: '15%', left: 0, right: 0 }}></div>
+        <div className="absolute h-px bg-blue-200" style={{ top: '50%', left: 0, right: 0 }}></div>
+        <div className="absolute h-px bg-blue-200" style={{ top: '85%', left: 0, right: 0 }}></div>
 
-        <div className="absolute w-px bg-indigo-300" style={{ left: '10%', top: 0, bottom: 0 }}></div>
-        <div className="absolute w-px bg-indigo-300" style={{ left: '50%', top: 0, bottom: 0 }}></div>
-        <div className="absolute w-px bg-indigo-300" style={{ left: '90%', top: 0, bottom: 0 }}></div>
+        <div className="absolute w-px bg-blue-200" style={{ left: '10%', top: 0, bottom: 0 }}></div>
+        <div className="absolute w-px bg-blue-200" style={{ left: '50%', top: 0, bottom: 0 }}></div>
+        <div className="absolute w-px bg-blue-200" style={{ left: '90%', top: 0, bottom: 0 }}></div>
       </div>
 
       <div className="w-full max-w-2xl mx-auto space-y-4 px-3 sm:px-4">
@@ -1531,7 +1531,7 @@ function WizardContent() {
           <button
             type="button"
             onClick={handleBackToDashboard}
-            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold text-indigo-700 bg-white/90 hover:bg-indigo-600 hover:text-white rounded-full border border-indigo-100 shadow-sm transition-all cursor-pointer group"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold text-blue-700 bg-white/90 hover:bg-blue-600 hover:text-white rounded-full border border-blue-100 shadow-xs transition-all cursor-pointer group"
             title="Save selected options and return to dashboard"
           >
             <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-0.5" />
@@ -1541,7 +1541,7 @@ function WizardContent() {
             <button
               type="button"
               onClick={handleStartFresh}
-              className="text-xs font-semibold text-purple-700 hover:text-purple-900 bg-purple-100/70 hover:bg-purple-200/80 px-3 py-1 rounded-full border border-purple-200/80 transition-all cursor-pointer"
+              className="text-xs font-semibold text-blue-700 hover:text-blue-900 bg-blue-100/70 hover:bg-blue-200/80 px-3 py-1 rounded-full border border-blue-200/80 transition-all cursor-pointer"
             >
               Start new specification
             </button>
@@ -1549,26 +1549,26 @@ function WizardContent() {
         </div>
 
         {/* Unified Seamless Wizard Card */}
-        <div className="bg-white/95 backdrop-blur-xl rounded-3xl border border-indigo-100 shadow-2xl shadow-indigo-500/10 overflow-hidden flex flex-col justify-between relative">
+        <div className="bg-white/95 backdrop-blur-xl rounded-3xl border border-blue-100 shadow-2xl shadow-blue-500/10 overflow-hidden flex flex-col justify-between relative">
           
-          {/* Rainbow Top Accent Line */}
-          <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-indigo-600 via-purple-600 to-pink-500" />
+          {/* Blue Top Accent Line */}
+          <div className="h-1.5 w-full bg-gradient-to-r from-blue-700 via-blue-600 to-sky-500" />
 
           {/* Integrated Top Progress Meter */}
-          <div className="px-5 sm:px-8 pt-5 pb-4 border-b border-indigo-100/60 bg-gradient-to-r from-indigo-50/80 via-purple-50/50 to-blue-50/60 space-y-2.5">
+          <div className="px-5 sm:px-8 pt-5 pb-4 border-b border-blue-100/60 bg-gradient-to-r from-blue-50/80 via-sky-50/50 to-blue-50/60 space-y-2.5">
             <div className="flex items-center justify-between text-xs">
-              <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-extrabold tracking-wider uppercase bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-xs">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-extrabold tracking-wider uppercase bg-blue-600 text-white shadow-xs">
                 {currentStep === 6 
                   ? `QUESTION ${currentQuestionIndex + 1} OF ${subModuleQuestions.length}`
                   : `STEP ${currentStep} OF 10`}
               </span>
-              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-indigo-100 text-indigo-700 border border-indigo-200/60">
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-blue-100 text-blue-700 border border-blue-200/60">
                 {progressPercent}% Completed
               </span>
             </div>
-            <div className="w-full bg-indigo-100/70 h-2 rounded-full overflow-hidden p-0.5 border border-indigo-200/40">
+            <div className="w-full bg-blue-100/70 h-2 rounded-full overflow-hidden p-0.5 border border-blue-200/40">
               <motion.div 
-                className="bg-gradient-to-r from-blue-600 via-indigo-600 via-purple-600 to-pink-500 h-full rounded-full shadow-xs"
+                className="bg-gradient-to-r from-blue-600 via-blue-700 to-sky-500 h-full rounded-full shadow-xs"
                 initial={{ width: 0 }}
                 animate={{ width: `${progressPercent}%` }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
@@ -1592,11 +1592,11 @@ function WizardContent() {
                 >
                 <div className="space-y-1">
                   <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-2xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-purple-600 text-white shadow-md shadow-indigo-500/25 shrink-0">
+                    <div className="p-2.5 rounded-2xl bg-gradient-to-br from-blue-600 via-blue-700 to-sky-600 text-white shadow-md shadow-blue-500/25 shrink-0">
                       <Building2 className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-900 bg-clip-text text-transparent">
+                      <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-blue-950 to-blue-900 bg-clip-text text-transparent">
                         Client & Organization
                       </h2>
                       <p className="text-xs sm:text-sm font-medium text-slate-500">
@@ -1621,7 +1621,7 @@ function WizardContent() {
                       className={`w-full px-4 py-2.5 text-xs bg-slate-50/70 border rounded-xl focus:bg-white focus:outline-none transition-all font-medium ${
                         stepErrors.companyName
                           ? 'border-rose-400 focus:border-rose-600 ring-4 ring-rose-500/10 bg-rose-50/30'
-                          : 'border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15'
+                          : 'border-slate-200 focus:border-blue-600 focus:ring-4 focus:ring-blue-500/15'
                       }`}
                     />
                     {stepErrors.companyName && (
@@ -1647,7 +1647,7 @@ function WizardContent() {
                       className={`w-full px-4 py-2.5 text-xs bg-slate-50/70 border rounded-xl focus:bg-white focus:outline-none transition-all font-medium ${
                         stepErrors.contactPerson
                           ? 'border-rose-400 focus:border-rose-600 ring-4 ring-rose-500/10 bg-rose-50/30'
-                          : 'border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15'
+                          : 'border-slate-200 focus:border-blue-600 focus:ring-4 focus:ring-blue-500/15'
                       }`}
                     />
                     {stepErrors.contactPerson && (
@@ -1673,7 +1673,7 @@ function WizardContent() {
                       className={`w-full px-4 py-2.5 text-xs bg-slate-50/70 border rounded-xl focus:bg-white focus:outline-none transition-all font-medium ${
                         stepErrors.contactEmail
                           ? 'border-rose-400 focus:border-rose-600 ring-4 ring-rose-500/10 bg-rose-50/30'
-                          : 'border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15'
+                          : 'border-slate-200 focus:border-blue-600 focus:ring-4 focus:ring-blue-500/15'
                       }`}
                     />
                     {stepErrors.contactEmail && (
@@ -1689,7 +1689,7 @@ function WizardContent() {
                       Phone <span className="text-rose-500 font-bold">*</span>
                     </label>
                     <div className="relative flex items-center">
-                      <span className="absolute left-3.5 text-xs font-bold text-indigo-700 bg-indigo-100/90 border border-indigo-200/80 px-2 py-0.5 rounded-md select-none pointer-events-none">
+                      <span className="absolute left-3.5 text-xs font-bold text-blue-700 bg-blue-100/90 border border-blue-200/80 px-2 py-0.5 rounded-md select-none pointer-events-none">
                         +91
                       </span>
                       <input
@@ -1709,7 +1709,7 @@ function WizardContent() {
                         className={`w-full pl-14 pr-4 py-2.5 text-xs bg-slate-50/70 border rounded-xl focus:bg-white focus:outline-none transition-all font-medium ${
                           stepErrors.contactPhone
                             ? 'border-rose-400 focus:border-rose-600 ring-4 ring-rose-500/10 bg-rose-50/30'
-                            : 'border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15'
+                            : 'border-slate-200 focus:border-blue-600 focus:ring-4 focus:ring-blue-500/15'
                         }`}
                       />
                     </div>
@@ -1730,7 +1730,7 @@ function WizardContent() {
                       setStepErrors({});
                       navigateToStep(2);
                     }}
-                    className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+                    className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-blue-600 via-blue-700 to-sky-600 hover:from-blue-700 hover:to-sky-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                   >
                     <span>Continue</span>
                     <ArrowRight className="w-4 h-4 ml-1.5" />
@@ -1750,11 +1750,11 @@ function WizardContent() {
               >
                 <div className="space-y-1">
                   <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-2xl bg-gradient-to-br from-purple-500 via-indigo-600 to-pink-600 text-white shadow-md shadow-purple-500/25 shrink-0">
+                    <div className="p-2.5 rounded-2xl bg-gradient-to-br from-blue-600 via-blue-700 to-sky-600 text-white shadow-md shadow-blue-500/25 shrink-0">
                       <Building2 className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-purple-950 to-indigo-900 bg-clip-text text-transparent">
+                      <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-blue-950 to-blue-900 bg-clip-text text-transparent">
                         Project Information
                       </h2>
                       <p className="text-xs sm:text-sm font-medium text-slate-500">
@@ -1780,7 +1780,7 @@ function WizardContent() {
                       className={`w-full px-4 py-2.5 text-xs bg-slate-50/70 border rounded-xl focus:bg-white focus:outline-none transition-all font-medium ${
                         stepErrors.projectName
                           ? 'border-rose-400 focus:border-rose-600 ring-4 ring-rose-500/10 bg-rose-50/30'
-                          : 'border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15'
+                          : 'border-slate-200 focus:border-blue-600 focus:ring-4 focus:ring-blue-500/15'
                       }`}
                     />
                     {stepErrors.projectName && (
@@ -1798,7 +1798,7 @@ function WizardContent() {
                       value={targetAudience}
                       onChange={(e) => setTargetAudience(e.target.value)}
                       placeholder="e.g. Operations Managers, Dispatch Drivers, Enterprise Admins"
-                      className="w-full px-4 py-2.5 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15 focus:outline-none transition-all font-medium"
+                      className="w-full px-4 py-2.5 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-500/15 focus:outline-none transition-all font-medium"
                     />
                   </div>
 
@@ -1809,7 +1809,7 @@ function WizardContent() {
                       value={expectedDuration}
                       onChange={(e) => setExpectedDuration(e.target.value)}
                       placeholder="e.g. 60 Working Days"
-                      className="w-full px-4 py-2.5 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15 focus:outline-none transition-all font-medium"
+                      className="w-full px-4 py-2.5 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-500/15 focus:outline-none transition-all font-medium"
                     />
                   </div>
                 </div>
@@ -1821,7 +1821,7 @@ function WizardContent() {
                       setStepErrors({});
                       navigateToStep(1);
                     }}
-                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
+                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
                   >
                     <ArrowLeft className="w-4 h-4 mr-1.5" />
                     <span>Back</span>
@@ -1833,7 +1833,7 @@ function WizardContent() {
                       setStepErrors({});
                       navigateToStep(3);
                     }}
-                    className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+                    className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-blue-600 via-blue-700 to-sky-600 hover:from-blue-700 hover:to-sky-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                   >
                     <span>Continue</span>
                     <ArrowRight className="w-4 h-4 ml-1.5" />
@@ -1854,11 +1854,11 @@ function WizardContent() {
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div className="space-y-1">
                     <div className="flex items-center gap-3">
-                      <div className="p-2.5 rounded-2xl bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-600 text-white shadow-md shadow-indigo-500/25 shrink-0">
+                      <div className="p-2.5 rounded-2xl bg-gradient-to-br from-blue-600 via-blue-700 to-sky-600 text-white shadow-md shadow-blue-500/25 shrink-0">
                         <FileText className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-indigo-950 via-purple-950 to-slate-900 bg-clip-text text-transparent">
+                        <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-blue-950 via-blue-900 to-slate-900 bg-clip-text text-transparent">
                           Product Scope & Goals
                         </h2>
                         <p className="text-xs sm:text-sm font-medium text-slate-500">
@@ -1873,7 +1873,7 @@ function WizardContent() {
                     type="button"
                     disabled={isRefiningAI}
                     onClick={handleRefineWithAI}
-                    className="inline-flex items-center justify-center space-x-2 px-4 py-2.5 bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 disabled:opacity-50 text-white text-xs font-bold rounded-xl shadow-md shadow-purple-500/25 hover:shadow-purple-500/40 transition-all shrink-0 cursor-pointer"
+                    className="inline-flex items-center justify-center space-x-2 px-4 py-2.5 bg-gradient-to-r from-blue-600 via-blue-700 to-sky-600 hover:from-blue-700 hover:to-sky-700 disabled:opacity-50 text-white text-xs font-bold rounded-xl shadow-md shadow-blue-500/25 hover:shadow-blue-500/40 transition-all shrink-0 cursor-pointer"
                   >
                     {isRefiningAI ? (
                       <>
@@ -1897,7 +1897,7 @@ function WizardContent() {
                     className={`w-full p-4 text-xs bg-slate-50/70 border rounded-2xl focus:bg-white focus:outline-none transition-all leading-relaxed font-medium ${
                       stepErrors.productDescription
                         ? 'border-rose-400 focus:border-rose-600 ring-4 ring-rose-500/10 bg-rose-50/30'
-                        : 'border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15'
+                        : 'border-slate-200 focus:border-blue-600 focus:ring-4 focus:ring-blue-500/15'
                     }`}
                   />
                   {stepErrors.productDescription && (
@@ -1915,7 +1915,7 @@ function WizardContent() {
                       setStepErrors({});
                       navigateToStep(2);
                     }}
-                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
+                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
                   >
                     <ArrowLeft className="w-4 h-4 mr-1.5" />
                     <span>Back</span>
@@ -1930,7 +1930,7 @@ function WizardContent() {
                       setStepErrors({});
                       navigateToStep(4);
                     }}
-                    className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+                    className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-blue-600 via-blue-700 to-sky-600 hover:from-blue-700 hover:to-sky-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                   >
                     <span>Continue</span>
                     <ArrowRight className="w-4 h-4 ml-1.5" />
@@ -1950,11 +1950,11 @@ function WizardContent() {
               >
                 <div className="space-y-1">
                   <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-2xl bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-600 text-white shadow-md shadow-blue-500/25 shrink-0">
+                    <div className="p-2.5 rounded-2xl bg-gradient-to-br from-blue-600 via-blue-700 to-sky-600 text-white shadow-md shadow-blue-500/25 shrink-0">
                       <Layers className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-900 bg-clip-text text-transparent">
+                      <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-blue-950 to-blue-900 bg-clip-text text-transparent">
                         Select Industry Domains
                       </h2>
                       <p className="text-xs sm:text-sm font-medium text-slate-500">
@@ -1977,13 +1977,13 @@ function WizardContent() {
                 )}
 
                 <div className="relative">
-                  <Search className="absolute left-3.5 top-3 w-4 h-4 text-indigo-500" />
+                  <Search className="absolute left-3.5 top-3 w-4 h-4 text-blue-500" />
                   <input
                     type="text"
                     value={categorySearch}
                     onChange={(e) => setCategorySearch(e.target.value)}
                     placeholder="Search 38+ enterprise domains..."
-                    className="w-full pl-10 pr-4 py-2.5 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15 focus:outline-none transition-all font-medium"
+                    className="w-full pl-10 pr-4 py-2.5 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-500/15 focus:outline-none transition-all font-medium"
                   />
                 </div>
 
@@ -1996,8 +1996,8 @@ function WizardContent() {
                         onClick={() => toggleCategory(cat.id)}
                         className={`p-3.5 rounded-xl border text-xs cursor-pointer transition-all flex items-center justify-between select-none ${
                           isSelected
-                            ? 'bg-gradient-to-r from-indigo-50 via-purple-50 to-blue-50/80 border-2 border-indigo-600 text-indigo-950 font-bold shadow-md shadow-indigo-500/10 scale-[1.01]'
-                            : 'bg-white border-slate-200/90 hover:border-indigo-300 hover:bg-indigo-50/20 text-slate-800 font-medium hover:scale-[1.005]'
+                            ? 'bg-gradient-to-r from-blue-50 via-sky-50 to-blue-50/80 border-2 border-blue-600 text-blue-950 font-bold shadow-md shadow-blue-500/10 scale-[1.01]'
+                            : 'bg-white border-slate-200/90 hover:border-blue-300 hover:bg-blue-50/20 text-slate-800 font-medium hover:scale-[1.005]'
                         }`}
                       >
                         <span className="truncate">{cat.name}</span>
@@ -2018,7 +2018,7 @@ function WizardContent() {
                       setStepErrors({});
                       navigateToStep(3);
                     }}
-                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
+                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
                   >
                     <ArrowLeft className="w-4 h-4 mr-1.5" />
                     <span>Back</span>
@@ -2033,7 +2033,7 @@ function WizardContent() {
                       setStepErrors({});
                       navigateToStep(5);
                     }}
-                    className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+                    className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-blue-600 via-blue-700 to-sky-600 hover:from-blue-700 hover:to-sky-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                   >
                     <span>Continue</span>
                     <ArrowRight className="w-4 h-4 ml-1.5" />
@@ -2054,11 +2054,11 @@ function WizardContent() {
                 <div className="flex items-center justify-between">
                   <div className="space-y-1">
                     <div className="flex items-center gap-3">
-                      <div className="p-2.5 rounded-2xl bg-gradient-to-br from-amber-500 via-indigo-600 to-purple-600 text-white shadow-md shadow-amber-500/25 shrink-0">
+                      <div className="p-2.5 rounded-2xl bg-gradient-to-br from-blue-600 via-blue-700 to-sky-600 text-white shadow-md shadow-blue-500/25 shrink-0">
                         <Cpu className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-purple-950 to-indigo-900 bg-clip-text text-transparent">
+                        <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-blue-950 to-blue-900 bg-clip-text text-transparent">
                           Product Platforms & Types
                         </h2>
                         <p className="text-xs sm:text-sm font-medium text-slate-500">
@@ -2070,9 +2070,9 @@ function WizardContent() {
                   <button
                     type="button"
                     onClick={() => setShowAddTypeModal(true)}
-                    className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 px-3 py-1.5 rounded-xl cursor-pointer transition-all shadow-2xs"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-blue-700 bg-blue-50 hover:bg-blue-100 border border-blue-200 px-3 py-1.5 rounded-xl cursor-pointer transition-all shadow-2xs"
                   >
-                    <Plus className="w-3.5 h-3.5 text-indigo-600" />
+                    <Plus className="w-3.5 h-3.5 text-blue-600" />
                     <span>Custom</span>
                   </button>
                 </div>
@@ -2098,8 +2098,8 @@ function WizardContent() {
                         onClick={() => toggleProductType(pt.id)}
                         className={`p-3.5 rounded-xl border text-xs cursor-pointer transition-all flex items-center justify-between select-none ${
                           isSelected
-                            ? 'bg-gradient-to-r from-indigo-50 via-purple-50 to-blue-50/80 border-2 border-indigo-600 text-indigo-950 font-bold shadow-md shadow-indigo-500/10 scale-[1.01]'
-                            : 'bg-white border-slate-200/90 hover:border-indigo-300 hover:bg-indigo-50/20 text-slate-800 font-medium hover:scale-[1.005]'
+                            ? 'bg-gradient-to-r from-blue-50 via-sky-50 to-blue-50/80 border-2 border-blue-600 text-blue-950 font-bold shadow-md shadow-blue-500/10 scale-[1.01]'
+                            : 'bg-white border-slate-200/90 hover:border-blue-300 hover:bg-blue-50/20 text-slate-800 font-medium hover:scale-[1.005]'
                         }`}
                       >
                         <div className="flex flex-col min-w-0 pr-2">
@@ -2127,7 +2127,7 @@ function WizardContent() {
                       setStepErrors({});
                       navigateToStep(4);
                     }}
-                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
+                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
                   >
                     <ArrowLeft className="w-4 h-4 mr-1.5" />
                     <span>Back</span>
@@ -2142,7 +2142,7 @@ function WizardContent() {
                       setStepErrors({});
                       navigateToStep(6, 0);
                     }}
-                    className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+                    className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-blue-600 via-blue-700 to-sky-600 hover:from-blue-700 hover:to-sky-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                   >
                     <span>Start Questions ({subModuleQuestions.length})</span>
                     <ArrowRight className="w-4 h-4 ml-1.5" />
@@ -2151,9 +2151,9 @@ function WizardContent() {
 
                 {showAddTypeModal && (
                   <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/40 backdrop-blur-md">
-                    <div className="bg-white rounded-3xl p-6 max-w-lg w-full border border-indigo-100 space-y-4 shadow-2xl max-h-[90vh] overflow-y-auto">
-                      <div className="flex items-center justify-between border-b border-indigo-50 pb-3">
-                        <h4 className="text-base font-extrabold text-slate-900 bg-gradient-to-r from-indigo-900 to-purple-900 bg-clip-text text-transparent">Add Custom Product Type & Modules</h4>
+                    <div className="bg-white rounded-3xl p-6 max-w-lg w-full border border-blue-100 space-y-4 shadow-2xl max-h-[90vh] overflow-y-auto">
+                      <div className="flex items-center justify-between border-b border-blue-50 pb-3">
+                        <h4 className="text-base font-extrabold text-slate-900 bg-gradient-to-r from-blue-900 to-sky-900 bg-clip-text text-transparent">Add Custom Product Type & Modules</h4>
                         <button
                           type="button"
                           onClick={() => {
@@ -2181,12 +2181,12 @@ function WizardContent() {
                           value={newCustomTypeName}
                           onChange={(e) => setNewCustomTypeName(e.target.value)}
                           placeholder="e.g. Telemedicine Web App, Fleet Management Portal"
-                          className="w-full px-4 py-2.5 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15 focus:outline-none transition-all font-medium"
+                          className="w-full px-4 py-2.5 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-500/15 focus:outline-none transition-all font-medium"
                         />
                       </div>
 
                       {/* Main Modules & Sub-Modules Builder */}
-                      <div className="space-y-2.5 pt-2 border-t border-indigo-50">
+                      <div className="space-y-2.5 pt-2 border-t border-blue-50">
                         <div className="flex items-center justify-between">
                           <label className="block text-xs font-semibold text-slate-700">
                             Product Main Modules & Sub-Modules
@@ -2194,9 +2194,9 @@ function WizardContent() {
                           <span className="text-[10px] font-medium text-slate-400">Specify modules & sub-modules</span>
                         </div>
 
-                        <div className="p-3.5 bg-indigo-50/40 rounded-2xl border border-indigo-100/80 space-y-2.5">
+                        <div className="p-3.5 bg-blue-50/40 rounded-2xl border border-blue-100/80 space-y-2.5">
                           <div className="space-y-1">
-                            <label className="block text-[11px] font-semibold text-indigo-900">
+                            <label className="block text-[11px] font-semibold text-blue-900">
                               Main Module Name
                             </label>
                             <input
@@ -2204,11 +2204,11 @@ function WizardContent() {
                               value={newModuleName}
                               onChange={(e) => setNewModuleName(e.target.value)}
                               placeholder="e.g. Patient Consultation & EHR"
-                              className="w-full px-3 py-2 text-xs bg-white border border-slate-200 rounded-xl focus:border-indigo-600 focus:outline-none font-medium"
+                              className="w-full px-3 py-2 text-xs bg-white border border-slate-200 rounded-xl focus:border-blue-600 focus:outline-none font-medium"
                             />
                           </div>
                           <div className="space-y-1">
-                            <label className="block text-[11px] font-semibold text-indigo-900">
+                            <label className="block text-[11px] font-semibold text-blue-900">
                               Sub-Modules / Core Features (comma-separated)
                             </label>
                             <input
@@ -2222,7 +2222,7 @@ function WizardContent() {
                                 }
                               }}
                               placeholder="e.g. Video Consultation, Digital Prescriptions, Chat History"
-                              className="w-full px-3 py-2 text-xs bg-white border border-slate-200 rounded-xl focus:border-indigo-600 focus:outline-none font-medium"
+                              className="w-full px-3 py-2 text-xs bg-white border border-slate-200 rounded-xl focus:border-blue-600 focus:outline-none font-medium"
                             />
                           </div>
                           <div className="flex justify-end pt-1">
@@ -2230,7 +2230,7 @@ function WizardContent() {
                               type="button"
                               onClick={handleAddModuleToCustomType}
                               disabled={!newModuleName.trim()}
-                              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl disabled:opacity-40 disabled:cursor-not-allowed transition-colors shadow-xs"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold bg-blue-600 hover:bg-blue-700 text-white rounded-xl disabled:opacity-40 disabled:cursor-not-allowed transition-colors shadow-xs"
                             >
                               <Plus className="w-3.5 h-3.5" />
                               <span>Add Module</span>
@@ -2244,15 +2244,15 @@ function WizardContent() {
                             {customTypeModules.map((m, idx) => (
                               <div
                                 key={idx}
-                                className="flex items-start justify-between p-2.5 rounded-xl bg-white border border-indigo-100 text-xs shadow-2xs"
+                                className="flex items-start justify-between p-2.5 rounded-xl bg-white border border-blue-100 text-xs shadow-2xs"
                               >
                                 <div className="space-y-1 min-w-0 pr-2">
-                                  <div className="font-bold text-indigo-950">{m.name}</div>
+                                  <div className="font-bold text-blue-950">{m.name}</div>
                                   <div className="flex flex-wrap gap-1">
                                     {m.subModules.map((s, sIdx) => (
                                       <span
                                         key={sIdx}
-                                        className="inline-block px-2 py-0.5 bg-indigo-50 text-indigo-700 font-semibold rounded-md text-[10px]"
+                                        className="inline-block px-2 py-0.5 bg-blue-50 text-blue-700 font-semibold rounded-md text-[10px]"
                                       >
                                         {s}
                                       </span>
@@ -2292,7 +2292,7 @@ function WizardContent() {
                           value={newCustomTypeNote}
                           onChange={(e) => setNewCustomTypeNote(e.target.value)}
                           placeholder="e.g.&#10;• HIPAA & SOC2 Compliant Cloud Storage&#10;• Live WebRTC Media Streaming with Low Latency&#10;• Automated Audit Logs for all prescription changes"
-                          className="w-full px-3.5 py-2 text-xs border border-slate-200 rounded-xl focus:border-indigo-600 focus:outline-none resize-none leading-relaxed font-sans"
+                          className="w-full px-3.5 py-2 text-xs border border-slate-200 rounded-xl focus:border-blue-600 focus:outline-none resize-none leading-relaxed font-sans"
                         />
                       </div>
 
@@ -2315,7 +2315,7 @@ function WizardContent() {
                           type="button"
                           onClick={handleAddCustomType}
                           disabled={!newCustomTypeName.trim() && customTypeModules.length === 0 && !newModuleName.trim()}
-                          className="px-4 py-2 text-xs font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl hover:from-indigo-700 hover:to-purple-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer shadow-md"
+                          className="px-4 py-2 text-xs font-bold bg-gradient-to-r from-blue-600 to-sky-600 text-white rounded-xl hover:from-blue-700 hover:to-sky-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer shadow-md"
                         >
                           Save Product Type & Modules
                         </button>
@@ -2340,15 +2340,15 @@ function WizardContent() {
                   <div className="space-y-3.5">
                     {/* Breadcrumb */}
                     <div className="flex items-center gap-2 flex-wrap">
-                      <span className="text-[10px] font-bold px-2 py-0.5 bg-indigo-100 text-indigo-800 rounded-md tracking-wider uppercase">
+                      <span className="text-[10px] font-bold px-2 py-0.5 bg-blue-100 text-blue-800 rounded-md tracking-wider uppercase">
                         {currentQuestion.productTypeName}
                       </span>
                       <span className="text-[10px] text-slate-300">›</span>
-                      <span className="text-[10px] font-bold px-2 py-0.5 bg-purple-100 text-purple-800 rounded-md tracking-wider uppercase">
+                      <span className="text-[10px] font-bold px-2 py-0.5 bg-sky-100 text-sky-800 rounded-md tracking-wider uppercase">
                         {currentQuestion.moduleName}
                       </span>
                       <span className="text-[10px] text-slate-300">›</span>
-                      <span className="text-[10px] font-bold px-2 py-0.5 bg-blue-100 text-blue-800 rounded-md tracking-wider uppercase">
+                      <span className="text-[10px] font-bold px-2 py-0.5 bg-blue-100 text-blue-900 rounded-md tracking-wider uppercase">
                         {currentQuestion.subModuleName}
                       </span>
                     </div>
@@ -2364,9 +2364,9 @@ function WizardContent() {
                       <button
                         type="button"
                         onClick={() => setShowAddOptionModal(true)}
-                        className="inline-flex items-center text-xs font-bold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 px-3 py-1.5 rounded-xl transition-all cursor-pointer shadow-2xs"
+                        className="inline-flex items-center text-xs font-bold text-blue-700 bg-blue-50 hover:bg-blue-100 border border-blue-200 px-3 py-1.5 rounded-xl transition-all cursor-pointer shadow-2xs"
                       >
-                        <Plus className="w-3.5 h-3.5 mr-1 text-indigo-600" />
+                        <Plus className="w-3.5 h-3.5 mr-1 text-blue-600" />
                         Add custom option
                       </button>
                     </div>
@@ -2382,8 +2382,8 @@ function WizardContent() {
                               onClick={() => toggleOption(opt.id)}
                               className={`p-3.5 rounded-xl border text-xs cursor-pointer transition-all flex items-center justify-between select-none ${
                                 isSelected
-                                  ? 'bg-gradient-to-r from-indigo-50 via-purple-50 to-blue-50/80 border-2 border-indigo-600 text-indigo-950 font-bold shadow-md shadow-indigo-500/10 scale-[1.01]'
-                                  : 'bg-white border-slate-200/90 hover:border-indigo-300 hover:bg-indigo-50/20 text-slate-800 font-medium hover:scale-[1.005]'
+                                  ? 'bg-gradient-to-r from-blue-50 via-sky-50 to-blue-50/80 border-2 border-blue-600 text-blue-950 font-bold shadow-md shadow-blue-500/10 scale-[1.01]'
+                                  : 'bg-white border-slate-200/90 hover:border-blue-300 hover:bg-blue-50/20 text-slate-800 font-medium hover:scale-[1.005]'
                               }`}
                             >
                               <div className="flex flex-col min-w-0 pr-2">
@@ -2430,7 +2430,7 @@ function WizardContent() {
                           }));
                         }}
                         placeholder="e.g. Must support automated failover and 256-bit AES data encryption..."
-                        className="w-full px-3.5 py-2 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15 focus:outline-none placeholder:text-slate-400 font-medium"
+                        className="w-full px-3.5 py-2 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-600 focus:ring-4 focus:ring-blue-500/15 focus:outline-none placeholder:text-slate-400 font-medium"
                       />
                     </div>
                   </div>
@@ -2470,7 +2470,7 @@ function WizardContent() {
                           navigateToStep(5);
                         }
                       }}
-                      className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
+                      className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
                     >
                       <ArrowLeft className="w-4 h-4 mr-1.5" />
                       <span>Back</span>
@@ -2488,7 +2488,7 @@ function WizardContent() {
                       <button
                         type="button"
                         onClick={handleNextQuestion}
-                        className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+                        className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-blue-600 via-blue-700 to-sky-600 hover:from-blue-700 hover:to-sky-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                       >
                         <span>
                           {currentQuestionIndex < subModuleQuestions.length - 1
@@ -2503,8 +2503,8 @@ function WizardContent() {
 
                 {showAddOptionModal && (
                   <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/40 backdrop-blur-md">
-                    <div className="bg-white rounded-3xl p-6 max-w-sm w-full border border-indigo-100 space-y-4 shadow-2xl">
-                      <h4 className="text-base font-extrabold text-slate-900 bg-gradient-to-r from-indigo-900 to-purple-900 bg-clip-text text-transparent">Add Custom Option</h4>
+                    <div className="bg-white rounded-3xl p-6 max-w-sm w-full border border-blue-100 space-y-4 shadow-2xl">
+                      <h4 className="text-base font-extrabold text-slate-900 bg-gradient-to-r from-blue-900 to-sky-900 bg-clip-text text-transparent">Add Custom Option</h4>
                       <div className="space-y-1">
                         <label className="block text-xs font-semibold text-slate-700">
                           Option Name
@@ -2521,7 +2521,7 @@ function WizardContent() {
                             }
                           }}
                           placeholder="Option name"
-                          className="w-full px-3.5 py-2 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-indigo-600 focus:outline-none font-medium"
+                          className="w-full px-3.5 py-2 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-600 focus:outline-none font-medium"
                         />
                       </div>
                       <div className="space-y-1">
@@ -2533,7 +2533,7 @@ function WizardContent() {
                           value={newCustomOptionNote}
                           onChange={(e) => setNewCustomOptionNote(e.target.value)}
                           placeholder={`e.g. specific requirements for ${currentQuestion?.subModuleName || 'this option'}...`}
-                          className="w-full px-3.5 py-2 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-indigo-600 focus:outline-none resize-none font-medium"
+                          className="w-full px-3.5 py-2 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-blue-600 focus:outline-none resize-none font-medium"
                         />
                       </div>
                       <div className="flex justify-end space-x-2 pt-2">
@@ -2551,7 +2551,7 @@ function WizardContent() {
                         <button
                           type="button"
                           onClick={handleAddCustomOption}
-                          className="px-4 py-2 text-xs font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-colors shadow-md"
+                          className="px-4 py-2 text-xs font-bold bg-gradient-to-r from-blue-600 to-sky-600 text-white rounded-xl hover:from-blue-700 hover:to-sky-700 transition-colors shadow-md"
                         >
                           Add Option
                         </button>
@@ -2574,11 +2574,11 @@ function WizardContent() {
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div className="space-y-1">
                     <div className="flex items-center gap-3">
-                      <div className="p-2.5 rounded-2xl bg-gradient-to-br from-indigo-500 via-blue-600 to-cyan-600 text-white shadow-md shadow-blue-500/25 shrink-0">
+                      <div className="p-2.5 rounded-2xl bg-gradient-to-br from-blue-600 via-blue-700 to-sky-600 text-white shadow-md shadow-blue-500/25 shrink-0">
                         <Cpu className="w-5 h-5 text-white" />
                       </div>
                       <div>
-                        <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-indigo-950 to-blue-900 bg-clip-text text-transparent">
+                        <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-blue-950 to-blue-900 bg-clip-text text-transparent">
                           Technology & Hosting
                         </h2>
                         <p className="text-xs sm:text-sm font-medium text-slate-500">
@@ -2599,7 +2599,7 @@ function WizardContent() {
                       type="button"
                       disabled={isLoadingRecommendations}
                       onClick={handleLoadRecommendations}
-                      className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 disabled:opacity-60 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-500/20 transition-all whitespace-nowrap cursor-pointer"
+                      className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-blue-600 via-blue-700 to-sky-600 hover:from-blue-700 hover:to-sky-700 disabled:opacity-60 text-white text-xs font-bold rounded-xl shadow-md shadow-blue-500/20 transition-all whitespace-nowrap cursor-pointer"
                     >
                       {isLoadingRecommendations ? (
                         <>
@@ -2615,8 +2615,8 @@ function WizardContent() {
 
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                   {Object.entries(techStack).map(([key, val]) => (
-                    <div key={key} className="p-3.5 bg-slate-50/80 border border-indigo-100/70 rounded-2xl hover:border-indigo-300 transition-all">
-                      <label className="block text-[10px] uppercase font-extrabold tracking-wider text-indigo-700 mb-1">
+                    <div key={key} className="p-3.5 bg-slate-50/80 border border-blue-100/70 rounded-2xl hover:border-blue-300 transition-all">
+                      <label className="block text-[10px] uppercase font-extrabold tracking-wider text-blue-700 mb-1">
                         {key.replace(/([A-Z])/g, ' $1')}
                       </label>
                       <input
@@ -2636,7 +2636,7 @@ function WizardContent() {
                     onClick={() => {
                       navigateToStep(6, subModuleQuestions.length > 0 ? subModuleQuestions.length - 1 : 0);
                     }}
-                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
+                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
                   >
                     <ArrowLeft className="w-4 h-4 mr-1.5" />
                     <span>Back</span>
@@ -2652,7 +2652,7 @@ function WizardContent() {
                     <button
                       type="button"
                       onClick={() => navigateToStep(8)}
-                      className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+                      className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-blue-600 via-blue-700 to-sky-600 hover:from-blue-700 hover:to-sky-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-blue-500/25 hover:shadow-blue-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                     >
                       <span>Continue</span>
                       <ArrowRight className="w-4 h-4 ml-1.5" />
@@ -2673,11 +2673,11 @@ function WizardContent() {
               >
                 <div className="space-y-1">
                   <div className="flex items-center gap-3">
-                    <div className="p-2.5 rounded-2xl bg-gradient-to-br from-emerald-500 via-teal-600 to-indigo-600 text-white shadow-md shadow-emerald-500/25 shrink-0">
+                    <div className="p-2.5 rounded-2xl bg-gradient-to-br from-blue-600 via-blue-700 to-sky-600 text-white shadow-md shadow-blue-500/25 shrink-0">
                       <ReceiptText className="w-5 h-5 text-white" />
                     </div>
                     <div>
-                      <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-emerald-950 to-indigo-900 bg-clip-text text-transparent">
+                      <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-blue-950 to-blue-900 bg-clip-text text-transparent">
                         Commercial Splitup
                       </h2>
                       <p className="text-xs sm:text-sm font-medium text-slate-500">
@@ -2692,12 +2692,12 @@ function WizardContent() {
                     onClick={() => setSplitupType('40-30-30')}
                     className={`p-4.5 rounded-2xl border cursor-pointer transition-all space-y-2 select-none ${
                       splitupType === '40-30-30'
-                        ? 'bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-50/80 border-2 border-indigo-600 text-indigo-950 font-bold shadow-lg shadow-indigo-500/15 scale-[1.01]'
-                        : 'bg-white border-slate-200/90 hover:border-indigo-300 hover:bg-indigo-50/20 text-slate-800'
+                        ? 'bg-gradient-to-br from-blue-50 via-sky-50 to-blue-50/80 border-2 border-blue-600 text-blue-950 font-bold shadow-lg shadow-blue-500/15 scale-[1.01]'
+                        : 'bg-white border-slate-200/90 hover:border-blue-300 hover:bg-blue-50/20 text-slate-800'
                     }`}
                   >
                     <div className="flex items-center justify-between">
-                      <div className="text-xs font-extrabold text-indigo-950">40 - 30 - 30 Split</div>
+                      <div className="text-xs font-extrabold text-blue-950">40 - 30 - 30 Split</div>
                       {splitupType === '40-30-30' && (
                         <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-xs">
                           <Check className="w-3.5 h-3.5 stroke-[3]" />
@@ -2713,12 +2713,12 @@ function WizardContent() {
                     onClick={() => setSplitupType('50-50')}
                     className={`p-4.5 rounded-2xl border cursor-pointer transition-all space-y-2 select-none ${
                       splitupType === '50-50'
-                        ? 'bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-50/80 border-2 border-indigo-600 text-indigo-950 font-bold shadow-lg shadow-indigo-500/15 scale-[1.01]'
-                        : 'bg-white border-slate-200/90 hover:border-indigo-300 hover:bg-indigo-50/20 text-slate-800'
+                        ? 'bg-gradient-to-br from-blue-50 via-sky-50 to-blue-50/80 border-2 border-blue-600 text-blue-950 font-bold shadow-lg shadow-blue-500/15 scale-[1.01]'
+                        : 'bg-white border-slate-200/90 hover:border-blue-300 hover:bg-blue-50/20 text-slate-800'
                     }`}
                   >
                     <div className="flex items-center justify-between">
-                      <div className="text-xs font-extrabold text-indigo-950">50 - 50 Split</div>
+                      <div className="text-xs font-extrabold text-blue-950">50 - 50 Split</div>
                       {splitupType === '50-50' && (
                         <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-xs">
                           <Check className="w-3.5 h-3.5 stroke-[3]" />
@@ -2734,12 +2734,12 @@ function WizardContent() {
                     onClick={() => setSplitupType('40-20-20-20')}
                     className={`p-4.5 rounded-2xl border cursor-pointer transition-all space-y-2 select-none ${
                       splitupType === '40-20-20-20'
-                        ? 'bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-50/80 border-2 border-indigo-600 text-indigo-950 font-bold shadow-lg shadow-indigo-500/15 scale-[1.01]'
-                        : 'bg-white border-slate-200/90 hover:border-indigo-300 hover:bg-indigo-50/20 text-slate-800'
+                        ? 'bg-gradient-to-br from-blue-50 via-sky-50 to-blue-50/80 border-2 border-blue-600 text-blue-950 font-bold shadow-lg shadow-blue-500/15 scale-[1.01]'
+                        : 'bg-white border-slate-200/90 hover:border-blue-300 hover:bg-blue-50/20 text-slate-800'
                     }`}
                   >
                     <div className="flex items-center justify-between">
-                      <div className="text-xs font-extrabold text-indigo-950">4-Phase Split</div>
+                      <div className="text-xs font-extrabold text-blue-950">4-Phase Split</div>
                       {splitupType === '40-20-20-20' && (
                         <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-xs">
                           <Check className="w-3.5 h-3.5 stroke-[3]" />
@@ -2755,12 +2755,12 @@ function WizardContent() {
                     onClick={() => setSplitupType('100')}
                     className={`p-4.5 rounded-2xl border cursor-pointer transition-all space-y-2 select-none ${
                       splitupType === '100'
-                        ? 'bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-50/80 border-2 border-indigo-600 text-indigo-950 font-bold shadow-lg shadow-indigo-500/15 scale-[1.01]'
-                        : 'bg-white border-slate-200/90 hover:border-indigo-300 hover:bg-indigo-50/20 text-slate-800'
+                        ? 'bg-gradient-to-br from-blue-50 via-sky-50 to-blue-50/80 border-2 border-blue-600 text-blue-950 font-bold shadow-lg shadow-blue-500/15 scale-[1.01]'
+                        : 'bg-white border-slate-200/90 hover:border-blue-300 hover:bg-blue-50/20 text-slate-800'
                     }`}
                   >
                     <div className="flex items-center justify-between">
-                      <div className="text-xs font-extrabold text-indigo-950">Full Complete Payment</div>
+                      <div className="text-xs font-extrabold text-blue-950">Full Complete Payment</div>
                       {splitupType === '100' && (
                         <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-xs">
                           <Check className="w-3.5 h-3.5 stroke-[3]" />
@@ -2777,7 +2777,7 @@ function WizardContent() {
                   <button
                     type="button"
                     onClick={() => navigateToStep(7)}
-                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
+                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
                   >
                     <ArrowLeft className="w-4 h-4 mr-1.5" />
                     <span>Back</span>
@@ -2785,7 +2785,7 @@ function WizardContent() {
                   <button
                     type="button"
                     onClick={handleTriggerAIGeneration}
-                    className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 via-indigo-600 via-pink-600 to-rose-600 hover:opacity-95 text-white text-xs font-extrabold rounded-xl shadow-xl shadow-purple-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+                    className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 via-blue-700 to-sky-600 hover:from-blue-700 hover:to-sky-700 text-white text-xs font-extrabold rounded-xl shadow-xl shadow-blue-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                   >
                     <span>Synthesize with AI</span>
                   </button>
@@ -2817,7 +2817,7 @@ function WizardContent() {
                 animate={{ opacity: 1 }}
                 className="space-y-6"
               >
-                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4.5 bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-950 text-white rounded-2xl shadow-lg gap-3 border border-indigo-500/20">
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4.5 bg-gradient-to-r from-slate-900 via-blue-950 to-blue-900 text-white rounded-2xl shadow-lg gap-3 border border-blue-500/20">
                   <div className="flex items-center space-x-2.5">
                     <div className="w-6 h-6 rounded-full bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center shrink-0">
                       <CheckCircle2 className="w-4 h-4 text-emerald-400" />
@@ -2829,7 +2829,7 @@ function WizardContent() {
                     type="button"
                     disabled={isSaving}
                     onClick={handleSaveProject}
-                    className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-xs font-bold rounded-xl hover:from-indigo-600 hover:to-purple-700 transition-all shadow-md cursor-pointer"
+                    className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-blue-600 to-sky-600 hover:from-blue-700 hover:to-sky-700 text-white text-xs font-bold rounded-xl transition-all shadow-md cursor-pointer"
                   >
                     {isSaving ? <div className="loader loader-xs loader-white mr-1.5 shrink-0" /> : <FileText className="w-3.5 h-3.5 mr-1.5" />}
                     <span>Save & View PDF</span>
@@ -2842,7 +2842,7 @@ function WizardContent() {
                     type="text"
                     value={customPdfName}
                     onChange={(e) => setCustomPdfName(e.target.value)}
-                    className="bg-white border border-slate-200 px-3 py-1.5 rounded-lg text-xs font-mono w-full sm:w-64 text-left sm:text-right focus:border-indigo-600 focus:outline-none font-semibold text-slate-800"
+                    className="bg-white border border-slate-200 px-3 py-1.5 rounded-lg text-xs font-mono w-full sm:w-64 text-left sm:text-right focus:border-blue-600 focus:outline-none font-semibold text-slate-800"
                   />
                 </div>
 
@@ -2869,7 +2869,7 @@ function WizardContent() {
                   <button
                     type="button"
                     onClick={() => navigateToStep(8)}
-                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
+                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-blue-50 hover:text-blue-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
                   >
                     <ArrowLeft className="w-4 h-4 mr-1.5" />
                     <span>Back to Payment Splits</span>
@@ -2880,7 +2880,7 @@ function WizardContent() {
                       type="button"
                       disabled={isSaving}
                       onClick={handleSaveProject}
-                      className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white text-xs font-extrabold rounded-xl transition-all shadow-xl shadow-indigo-500/25 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
+                      className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-blue-600 via-blue-700 to-sky-600 hover:from-blue-700 hover:to-sky-700 text-white text-xs font-extrabold rounded-xl transition-all shadow-xl shadow-blue-500/25 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
                     >
                       {isSaving ? <div className="loader loader-xs loader-white mr-1.5 shrink-0" /> : <Check className="w-4 h-4 mr-2" />}
                       <span>Save Project & Export PDF</span>
