@@ -1506,17 +1506,22 @@ function WizardContent() {
   const progressPercent = Math.min(100, Math.round((currentProgressStep / currentTotalSteps) * 100));
 
   return (
-    <div className="min-h-screen bg-white text-neutral-900 font-sans pt-8 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-indigo-50/70 via-purple-50/40 to-blue-50/40 text-slate-900 font-sans pt-6 pb-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden">
       
-      {/* Background Architectural Grid Lines */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-20 -z-10">
-        <div className="absolute h-px bg-neutral-300" style={{ top: '15%', left: 0, right: 0 }}></div>
-        <div className="absolute h-px bg-neutral-300" style={{ top: '50%', left: 0, right: 0 }}></div>
-        <div className="absolute h-px bg-neutral-300" style={{ top: '85%', left: 0, right: 0 }}></div>
+      {/* Background Ambient Color Glow Orbs */}
+      <div className="absolute top-10 left-10 w-96 h-96 bg-purple-400/20 rounded-full blur-[120px] pointer-events-none -z-10" />
+      <div className="absolute top-40 right-10 w-[30rem] h-[30rem] bg-indigo-400/20 rounded-full blur-[140px] pointer-events-none -z-10" />
+      <div className="absolute bottom-10 left-1/3 w-96 h-96 bg-blue-400/20 rounded-full blur-[120px] pointer-events-none -z-10" />
 
-        <div className="absolute w-px bg-neutral-300" style={{ left: '10%', top: 0, bottom: 0 }}></div>
-        <div className="absolute w-px bg-neutral-300" style={{ left: '50%', top: 0, bottom: 0 }}></div>
-        <div className="absolute w-px bg-neutral-300" style={{ left: '90%', top: 0, bottom: 0 }}></div>
+      {/* Background Architectural Grid Lines */}
+      <div className="absolute inset-0 overflow-hidden pointer-events-none opacity-15 -z-10">
+        <div className="absolute h-px bg-indigo-300" style={{ top: '15%', left: 0, right: 0 }}></div>
+        <div className="absolute h-px bg-indigo-300" style={{ top: '50%', left: 0, right: 0 }}></div>
+        <div className="absolute h-px bg-indigo-300" style={{ top: '85%', left: 0, right: 0 }}></div>
+
+        <div className="absolute w-px bg-indigo-300" style={{ left: '10%', top: 0, bottom: 0 }}></div>
+        <div className="absolute w-px bg-indigo-300" style={{ left: '50%', top: 0, bottom: 0 }}></div>
+        <div className="absolute w-px bg-indigo-300" style={{ left: '90%', top: 0, bottom: 0 }}></div>
       </div>
 
       <div className="w-full max-w-2xl mx-auto space-y-4 px-3 sm:px-4">
@@ -1526,17 +1531,17 @@ function WizardContent() {
           <button
             type="button"
             onClick={handleBackToDashboard}
-            className="inline-flex items-center gap-1.5 text-xs font-medium text-neutral-500 hover:text-neutral-900 transition-colors cursor-pointer"
+            className="inline-flex items-center gap-1.5 px-3.5 py-1.5 text-xs font-bold text-indigo-700 bg-white/90 hover:bg-indigo-600 hover:text-white rounded-full border border-indigo-100 shadow-sm transition-all cursor-pointer group"
             title="Save selected options and return to dashboard"
           >
-            <ArrowLeft className="w-3.5 h-3.5" />
+            <ArrowLeft className="w-3.5 h-3.5 transition-transform group-hover:-translate-x-0.5" />
             <span>Back to Dashboard</span>
           </button>
           {draftProjectId && (
             <button
               type="button"
               onClick={handleStartFresh}
-              className="text-[11px] text-neutral-400 hover:text-neutral-700 transition-colors cursor-pointer"
+              className="text-xs font-semibold text-purple-700 hover:text-purple-900 bg-purple-100/70 hover:bg-purple-200/80 px-3 py-1 rounded-full border border-purple-200/80 transition-all cursor-pointer"
             >
               Start new specification
             </button>
@@ -1544,23 +1549,26 @@ function WizardContent() {
         </div>
 
         {/* Unified Seamless Wizard Card */}
-        <div className="bg-white rounded-2xl border border-neutral-200/90 shadow-sm overflow-hidden flex flex-col justify-between">
+        <div className="bg-white/95 backdrop-blur-xl rounded-3xl border border-indigo-100 shadow-2xl shadow-indigo-500/10 overflow-hidden flex flex-col justify-between relative">
           
+          {/* Rainbow Top Accent Line */}
+          <div className="h-1.5 w-full bg-gradient-to-r from-blue-600 via-indigo-600 via-purple-600 to-pink-500" />
+
           {/* Integrated Top Progress Meter */}
-          <div className="px-4 sm:px-8 pt-5 pb-4 border-b border-neutral-100 bg-neutral-50/40 space-y-2">
+          <div className="px-5 sm:px-8 pt-5 pb-4 border-b border-indigo-100/60 bg-gradient-to-r from-indigo-50/80 via-purple-50/50 to-blue-50/60 space-y-2.5">
             <div className="flex items-center justify-between text-xs">
-              <span className="font-semibold uppercase tracking-wider text-[11px] text-neutral-800">
+              <span className="inline-flex items-center px-3 py-1 rounded-full text-[10px] font-extrabold tracking-wider uppercase bg-gradient-to-r from-indigo-600 to-purple-600 text-white shadow-xs">
                 {currentStep === 6 
                   ? `QUESTION ${currentQuestionIndex + 1} OF ${subModuleQuestions.length}`
                   : `STEP ${currentStep} OF 10`}
               </span>
-              <span className="font-medium text-neutral-600">
+              <span className="inline-flex items-center gap-1 px-2.5 py-0.5 rounded-full text-xs font-extrabold bg-indigo-100 text-indigo-700 border border-indigo-200/60">
                 {progressPercent}% Completed
               </span>
             </div>
-            <div className="w-full bg-neutral-200 h-1.5 rounded-full overflow-hidden">
+            <div className="w-full bg-indigo-100/70 h-2 rounded-full overflow-hidden p-0.5 border border-indigo-200/40">
               <motion.div 
-                className="bg-neutral-800 h-full rounded-full"
+                className="bg-gradient-to-r from-blue-600 via-indigo-600 via-purple-600 to-pink-500 h-full rounded-full shadow-xs"
                 initial={{ width: 0 }}
                 animate={{ width: `${progressPercent}%` }}
                 transition={{ duration: 0.3, ease: 'easeOut' }}
@@ -1583,20 +1591,24 @@ function WizardContent() {
                   className="space-y-6"
                 >
                 <div className="space-y-1">
-                  <div className="flex items-center gap-2.5">
-                    <Building2 className="w-5 h-5 text-neutral-800" />
-                    <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                      Client & Organization
-                    </h2>
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 rounded-2xl bg-gradient-to-br from-indigo-500 via-indigo-600 to-purple-600 text-white shadow-md shadow-indigo-500/25 shrink-0">
+                      <Building2 className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-900 bg-clip-text text-transparent">
+                        Client & Organization
+                      </h2>
+                      <p className="text-xs sm:text-sm font-medium text-slate-500">
+                        Basic information for the official specification.
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-xs sm:text-sm text-neutral-500">
-                    Basic information for the official specification.
-                  </p>
                 </div>
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                   <div>
-                    <label className="block text-xs font-medium text-neutral-700 mb-1">
-                      Company Name <span className="text-red-500">*</span>
+                    <label className="block text-xs font-semibold text-slate-700 mb-1 flex items-center gap-1">
+                      Company Name <span className="text-rose-500 font-bold">*</span>
                     </label>
                     <input
                       type="text"
@@ -1606,23 +1618,23 @@ function WizardContent() {
                         clearFieldError('companyName');
                       }}
                       placeholder="e.g. Acme Corp"
-                      className={`w-full px-3.5 py-2 text-xs bg-white border rounded-lg focus:outline-none transition-colors ${
+                      className={`w-full px-4 py-2.5 text-xs bg-slate-50/70 border rounded-xl focus:bg-white focus:outline-none transition-all font-medium ${
                         stepErrors.companyName
-                          ? 'border-red-400 focus:border-red-600 ring-1 ring-red-200 bg-red-50/20'
-                          : 'border-neutral-200 focus:border-neutral-800'
+                          ? 'border-rose-400 focus:border-rose-600 ring-4 ring-rose-500/10 bg-rose-50/30'
+                          : 'border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15'
                       }`}
                     />
                     {stepErrors.companyName && (
-                      <p className="text-[11px] text-red-600 mt-1 font-medium flex items-center gap-1">
-                        <AlertCircle className="w-3 h-3 shrink-0" />
+                      <p className="text-[11px] text-rose-600 mt-1.5 font-semibold flex items-center gap-1">
+                        <AlertCircle className="w-3.5 h-3.5 shrink-0 text-rose-500" />
                         {stepErrors.companyName}
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-neutral-700 mb-1">
-                      Contact Person <span className="text-red-500">*</span>
+                    <label className="block text-xs font-semibold text-slate-700 mb-1 flex items-center gap-1">
+                      Contact Person <span className="text-rose-500 font-bold">*</span>
                     </label>
                     <input
                       type="text"
@@ -1632,23 +1644,23 @@ function WizardContent() {
                         clearFieldError('contactPerson');
                       }}
                       placeholder="e.g. Rajesh Kumar"
-                      className={`w-full px-3.5 py-2 text-xs bg-white border rounded-lg focus:outline-none transition-colors ${
+                      className={`w-full px-4 py-2.5 text-xs bg-slate-50/70 border rounded-xl focus:bg-white focus:outline-none transition-all font-medium ${
                         stepErrors.contactPerson
-                          ? 'border-red-400 focus:border-red-600 ring-1 ring-red-200 bg-red-50/20'
-                          : 'border-neutral-200 focus:border-neutral-800'
+                          ? 'border-rose-400 focus:border-rose-600 ring-4 ring-rose-500/10 bg-rose-50/30'
+                          : 'border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15'
                       }`}
                     />
                     {stepErrors.contactPerson && (
-                      <p className="text-[11px] text-red-600 mt-1 font-medium flex items-center gap-1">
-                        <AlertCircle className="w-3 h-3 shrink-0" />
+                      <p className="text-[11px] text-rose-600 mt-1.5 font-semibold flex items-center gap-1">
+                        <AlertCircle className="w-3.5 h-3.5 shrink-0 text-rose-500" />
                         {stepErrors.contactPerson}
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-neutral-700 mb-1">
-                      Email <span className="text-red-500">*</span>
+                    <label className="block text-xs font-semibold text-slate-700 mb-1 flex items-center gap-1">
+                      Email <span className="text-rose-500 font-bold">*</span>
                     </label>
                     <input
                       type="email"
@@ -1658,26 +1670,26 @@ function WizardContent() {
                         clearFieldError('contactEmail');
                       }}
                       placeholder="rajesh@acmecorp.com"
-                      className={`w-full px-3.5 py-2 text-xs bg-white border rounded-lg focus:outline-none transition-colors ${
+                      className={`w-full px-4 py-2.5 text-xs bg-slate-50/70 border rounded-xl focus:bg-white focus:outline-none transition-all font-medium ${
                         stepErrors.contactEmail
-                          ? 'border-red-400 focus:border-red-600 ring-1 ring-red-200 bg-red-50/20'
-                          : 'border-neutral-200 focus:border-neutral-800'
+                          ? 'border-rose-400 focus:border-rose-600 ring-4 ring-rose-500/10 bg-rose-50/30'
+                          : 'border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15'
                       }`}
                     />
                     {stepErrors.contactEmail && (
-                      <p className="text-[11px] text-red-600 mt-1 font-medium flex items-center gap-1">
-                        <AlertCircle className="w-3 h-3 shrink-0" />
+                      <p className="text-[11px] text-rose-600 mt-1.5 font-semibold flex items-center gap-1">
+                        <AlertCircle className="w-3.5 h-3.5 shrink-0 text-rose-500" />
                         {stepErrors.contactEmail}
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-neutral-700 mb-1">
-                      Phone <span className="text-red-500">*</span>
+                    <label className="block text-xs font-semibold text-slate-700 mb-1 flex items-center gap-1">
+                      Phone <span className="text-rose-500 font-bold">*</span>
                     </label>
                     <div className="relative flex items-center">
-                      <span className="absolute left-3 text-xs font-semibold text-neutral-500 select-none pointer-events-none">
+                      <span className="absolute left-3.5 text-xs font-bold text-indigo-700 bg-indigo-100/90 border border-indigo-200/80 px-2 py-0.5 rounded-md select-none pointer-events-none">
                         +91
                       </span>
                       <input
@@ -1694,16 +1706,16 @@ function WizardContent() {
                           clearFieldError('contactPhone');
                         }}
                         placeholder="9876543210"
-                        className={`w-full pl-11 pr-3.5 py-2 text-xs bg-white border rounded-lg focus:outline-none transition-colors ${
+                        className={`w-full pl-14 pr-4 py-2.5 text-xs bg-slate-50/70 border rounded-xl focus:bg-white focus:outline-none transition-all font-medium ${
                           stepErrors.contactPhone
-                            ? 'border-red-400 focus:border-red-600 ring-1 ring-red-200 bg-red-50/20'
-                            : 'border-neutral-200 focus:border-neutral-800'
+                            ? 'border-rose-400 focus:border-rose-600 ring-4 ring-rose-500/10 bg-rose-50/30'
+                            : 'border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15'
                         }`}
                       />
                     </div>
                     {stepErrors.contactPhone && (
-                      <p className="text-[11px] text-red-600 mt-1 font-medium flex items-center gap-1">
-                        <AlertCircle className="w-3 h-3 shrink-0" />
+                      <p className="text-[11px] text-rose-600 mt-1.5 font-semibold flex items-center gap-1">
+                        <AlertCircle className="w-3.5 h-3.5 shrink-0 text-rose-500" />
                         {stepErrors.contactPhone}
                       </p>
                     )}
@@ -1718,10 +1730,10 @@ function WizardContent() {
                       setStepErrors({});
                       navigateToStep(2);
                     }}
-                    className="inline-flex items-center px-4 py-2 bg-[#6b47ff] text-white text-xs font-semibold rounded-lg hover:bg-[#5833e6] shadow-xs transition-colors cursor-pointer"
+                    className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                   >
                     <span>Continue</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                    <ArrowRight className="w-4 h-4 ml-1.5" />
                   </button>
                 </div>
               </motion.div>
@@ -1737,21 +1749,25 @@ function WizardContent() {
                 className="space-y-6"
               >
                 <div className="space-y-1">
-                  <div className="flex items-center gap-2.5">
-                    <Building2 className="w-5 h-5 text-neutral-800" />
-                    <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                      Project Information
-                    </h2>
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 rounded-2xl bg-gradient-to-br from-purple-500 via-indigo-600 to-pink-600 text-white shadow-md shadow-purple-500/25 shrink-0">
+                      <Building2 className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-purple-950 to-indigo-900 bg-clip-text text-transparent">
+                        Project Information
+                      </h2>
+                      <p className="text-xs sm:text-sm font-medium text-slate-500">
+                        Define the project identity and operational parameters.
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-xs sm:text-sm text-neutral-500">
-                    Define the project identity and operational parameters.
-                  </p>
                 </div>
 
                 <div className="space-y-4">
                   <div>
-                    <label className="block text-xs font-medium text-neutral-600 mb-1">
-                      Project Name <span className="text-red-500">*</span>
+                    <label className="block text-xs font-semibold text-slate-700 mb-1 flex items-center gap-1">
+                      Project Name <span className="text-rose-500 font-bold">*</span>
                     </label>
                     <input
                       type="text"
@@ -1761,37 +1777,39 @@ function WizardContent() {
                         clearFieldError('projectName');
                       }}
                       placeholder="e.g. Enterprise Logistic ERP"
-                      className={`w-full px-3.5 py-2 text-xs bg-white border rounded-lg focus:border-neutral-800 focus:outline-none transition-colors ${
-                        stepErrors.projectName ? 'border-red-400 bg-red-50/20' : 'border-neutral-200'
+                      className={`w-full px-4 py-2.5 text-xs bg-slate-50/70 border rounded-xl focus:bg-white focus:outline-none transition-all font-medium ${
+                        stepErrors.projectName
+                          ? 'border-rose-400 focus:border-rose-600 ring-4 ring-rose-500/10 bg-rose-50/30'
+                          : 'border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15'
                       }`}
                     />
                     {stepErrors.projectName && (
-                      <p className="text-[11px] text-red-600 mt-1 font-medium flex items-center gap-1">
-                        <AlertCircle className="w-3 h-3 shrink-0" />
+                      <p className="text-[11px] text-rose-600 mt-1.5 font-semibold flex items-center gap-1">
+                        <AlertCircle className="w-3.5 h-3.5 shrink-0 text-rose-500" />
                         {stepErrors.projectName}
                       </p>
                     )}
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-neutral-600 mb-1">Target Audience & User Base</label>
+                    <label className="block text-xs font-semibold text-slate-700 mb-1">Target Audience & User Base</label>
                     <input
                       type="text"
                       value={targetAudience}
                       onChange={(e) => setTargetAudience(e.target.value)}
                       placeholder="e.g. Operations Managers, Dispatch Drivers, Enterprise Admins"
-                      className="w-full px-3.5 py-2 text-xs bg-white border border-neutral-200 rounded-lg focus:border-neutral-800 focus:outline-none transition-colors"
+                      className="w-full px-4 py-2.5 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15 focus:outline-none transition-all font-medium"
                     />
                   </div>
 
                   <div>
-                    <label className="block text-xs font-medium text-neutral-600 mb-1">Target Duration</label>
+                    <label className="block text-xs font-semibold text-slate-700 mb-1">Target Duration</label>
                     <input
                       type="text"
                       value={expectedDuration}
                       onChange={(e) => setExpectedDuration(e.target.value)}
                       placeholder="e.g. 60 Working Days"
-                      className="w-full px-3.5 py-2 text-xs bg-white border border-neutral-200 rounded-lg focus:border-neutral-800 focus:outline-none transition-colors"
+                      className="w-full px-4 py-2.5 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15 focus:outline-none transition-all font-medium"
                     />
                   </div>
                 </div>
@@ -1803,9 +1821,9 @@ function WizardContent() {
                       setStepErrors({});
                       navigateToStep(1);
                     }}
-                    className="inline-flex items-center px-3.5 py-2 text-xs text-neutral-600 hover:text-neutral-900 transition-colors cursor-pointer"
+                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
                   >
-                    <ArrowLeft className="w-3.5 h-3.5 mr-1.5" />
+                    <ArrowLeft className="w-4 h-4 mr-1.5" />
                     <span>Back</span>
                   </button>
                   <button
@@ -1815,10 +1833,10 @@ function WizardContent() {
                       setStepErrors({});
                       navigateToStep(3);
                     }}
-                    className="inline-flex items-center px-4 py-2 bg-[#6b47ff] text-white text-xs font-semibold rounded-lg hover:bg-[#5833e6] shadow-xs transition-colors cursor-pointer"
+                    className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                   >
                     <span>Continue</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                    <ArrowRight className="w-4 h-4 ml-1.5" />
                   </button>
                 </div>
               </motion.div>
@@ -1835,20 +1853,27 @@ function WizardContent() {
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div className="space-y-1">
-                    <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                      Product Scope & Goals
-                    </h2>
-                    <p className="text-xs sm:text-sm text-neutral-500">
-                      Briefly describe what this platform should accomplish in one line.
-                    </p>
+                    <div className="flex items-center gap-3">
+                      <div className="p-2.5 rounded-2xl bg-gradient-to-br from-indigo-500 via-purple-600 to-pink-600 text-white shadow-md shadow-indigo-500/25 shrink-0">
+                        <Sparkles className="w-5 h-5 text-amber-300" />
+                      </div>
+                      <div>
+                        <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-indigo-950 via-purple-950 to-slate-900 bg-clip-text text-transparent">
+                          Product Scope & Goals
+                        </h2>
+                        <p className="text-xs sm:text-sm font-medium text-slate-500">
+                          Briefly describe what this platform should accomplish in one line.
+                        </p>
+                      </div>
+                    </div>
                   </div>
 
-                  {/* Redefine with AI Button (Dark Grey) */}
+                  {/* Redefine with AI Button */}
                   <button
                     type="button"
                     disabled={isRefiningAI}
                     onClick={handleRefineWithAI}
-                    className="inline-flex items-center justify-center space-x-1.5 px-3.5 py-2 bg-[#6b47ff] hover:bg-[#5833e6] disabled:opacity-50 text-white text-xs font-semibold rounded-lg shadow-xs transition-all shrink-0 cursor-pointer"
+                    className="inline-flex items-center justify-center space-x-2 px-4 py-2.5 bg-gradient-to-r from-purple-600 via-indigo-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 disabled:opacity-50 text-white text-xs font-bold rounded-xl shadow-md shadow-purple-500/25 hover:shadow-purple-500/40 transition-all shrink-0 cursor-pointer"
                   >
                     {isRefiningAI ? (
                       <>
@@ -1857,7 +1882,7 @@ function WizardContent() {
                       </>
                     ) : (
                       <>
-                        <Sparkles className="w-3.5 h-3.5 text-amber-300" />
+                        <Sparkles className="w-4 h-4 text-amber-300" />
                         <span>Redefine with AI</span>
                       </>
                     )}
@@ -1872,15 +1897,15 @@ function WizardContent() {
                       clearFieldError('productDescription');
                     }}
                     placeholder="e.g. ERP portal for manufacturing factory with raw material inventory, batch production tracking, quality inspection, and GST invoicing"
-                    className={`w-full p-3.5 text-xs bg-white border rounded-lg focus:outline-none transition-colors leading-relaxed ${
+                    className={`w-full p-4 text-xs bg-slate-50/70 border rounded-2xl focus:bg-white focus:outline-none transition-all leading-relaxed font-medium ${
                       stepErrors.productDescription
-                        ? 'border-red-400 focus:border-red-600 ring-1 ring-red-200 bg-red-50/20'
-                        : 'border-neutral-200 focus:border-neutral-800'
+                        ? 'border-rose-400 focus:border-rose-600 ring-4 ring-rose-500/10 bg-rose-50/30'
+                        : 'border-slate-200 focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15'
                     }`}
                   />
                   {stepErrors.productDescription && (
-                    <p className="text-[11px] text-red-600 mt-1 font-medium flex items-center gap-1">
-                      <AlertCircle className="w-3 h-3 shrink-0" />
+                    <p className="text-[11px] text-rose-600 mt-1.5 font-semibold flex items-center gap-1">
+                      <AlertCircle className="w-3.5 h-3.5 shrink-0 text-rose-500" />
                       {stepErrors.productDescription}
                     </p>
                   )}
@@ -1893,9 +1918,9 @@ function WizardContent() {
                       setStepErrors({});
                       navigateToStep(2);
                     }}
-                    className="inline-flex items-center px-3.5 py-2 text-xs text-neutral-600 hover:text-neutral-900 transition-colors cursor-pointer"
+                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
                   >
-                    <ArrowLeft className="w-3.5 h-3.5 mr-1.5" />
+                    <ArrowLeft className="w-4 h-4 mr-1.5" />
                     <span>Back</span>
                   </button>
                   <button
@@ -1908,16 +1933,16 @@ function WizardContent() {
                       setStepErrors({});
                       navigateToStep(4);
                     }}
-                    className="inline-flex items-center px-4 py-2 bg-[#6b47ff] text-white text-xs font-semibold rounded-lg hover:bg-[#5833e6] shadow-xs transition-colors cursor-pointer"
+                    className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                   >
                     <span>Continue</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                    <ArrowRight className="w-4 h-4 ml-1.5" />
                   </button>
                 </div>
               </motion.div>
             )}
 
-            {/* ================= STEP 4: DOMAINS (DARK GREY SELECTION) ================= */}
+            {/* ================= STEP 4: DOMAINS (VIBRANT COLOR SELECTION) ================= */}
             {currentStep === 4 && (
               <motion.div
                 key="step-4"
@@ -1927,15 +1952,19 @@ function WizardContent() {
                 className="space-y-6"
               >
                 <div className="space-y-1">
-                  <div className="flex items-center gap-2.5">
-                    <Layers className="w-5 h-5 text-neutral-800" />
-                    <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                      Select Industry Domains
-                    </h2>
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 rounded-2xl bg-gradient-to-br from-blue-500 via-indigo-600 to-purple-600 text-white shadow-md shadow-blue-500/25 shrink-0">
+                      <Layers className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-900 bg-clip-text text-transparent">
+                        Select Industry Domains
+                      </h2>
+                      <p className="text-xs sm:text-sm font-medium text-slate-500">
+                        Choose one or more domains matching your product.
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-xs sm:text-sm text-neutral-500">
-                    Choose one or more domains matching your product.
-                  </p>
                 </div>
 
                 {/* In-app error message section for Step 4 */}
@@ -1943,40 +1972,42 @@ function WizardContent() {
                   <motion.div
                     initial={{ opacity: 0, y: -4 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-800 text-xs font-medium flex items-center gap-2.5"
+                    className="p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs font-semibold flex items-center gap-2.5"
                   >
-                    <AlertCircle className="w-4 h-4 text-red-600 shrink-0" />
+                    <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
                     <span>{stepErrors.categories}</span>
                   </motion.div>
                 )}
 
                 <div className="relative">
-                  <Search className="absolute left-3 top-2.5 w-3.5 h-3.5 text-neutral-400" />
+                  <Search className="absolute left-3.5 top-3 w-4 h-4 text-indigo-500" />
                   <input
                     type="text"
                     value={categorySearch}
                     onChange={(e) => setCategorySearch(e.target.value)}
-                    placeholder="Search domains..."
-                    className="w-full pl-8 pr-3 py-1.5 text-xs bg-neutral-50 border border-neutral-200 rounded-lg focus:bg-white focus:border-neutral-800 focus:outline-none"
+                    placeholder="Search 38+ enterprise domains..."
+                    className="w-full pl-10 pr-4 py-2.5 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15 focus:outline-none transition-all font-medium"
                   />
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-[300px] overflow-y-auto pr-1">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[300px] overflow-y-auto pr-1">
                   {filteredCategories.map((cat) => {
                     const isSelected = selectedCategoryIds.includes(cat.id);
                     return (
                       <div
                         key={cat.id}
                         onClick={() => toggleCategory(cat.id)}
-                        className={`p-3 rounded-lg border text-xs cursor-pointer transition-all flex items-center justify-between select-none ${
+                        className={`p-3.5 rounded-xl border text-xs cursor-pointer transition-all flex items-center justify-between select-none ${
                           isSelected
-                            ? 'bg-white border-neutral-900 shadow-2xs text-neutral-900'
-                            : 'bg-white border-neutral-200 hover:border-neutral-300 text-neutral-800'
+                            ? 'bg-gradient-to-r from-indigo-50 via-purple-50 to-blue-50/80 border-2 border-indigo-600 text-indigo-950 font-bold shadow-md shadow-indigo-500/10 scale-[1.01]'
+                            : 'bg-white border-slate-200/90 hover:border-indigo-300 hover:bg-indigo-50/20 text-slate-800 font-medium hover:scale-[1.005]'
                         }`}
                       >
-                        <span className="font-medium truncate">{cat.name}</span>
+                        <span className="truncate">{cat.name}</span>
                         {isSelected && (
-                          <Check className="w-4 h-4 text-emerald-600 stroke-[2.5] shrink-0 ml-2" />
+                          <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 ml-2 shadow-xs">
+                            <Check className="w-3.5 h-3.5 stroke-[3]" />
+                          </div>
                         )}
                       </div>
                     );
@@ -1990,9 +2021,9 @@ function WizardContent() {
                       setStepErrors({});
                       navigateToStep(3);
                     }}
-                    className="inline-flex items-center px-3.5 py-2 text-xs text-neutral-600 hover:text-neutral-900 transition-colors cursor-pointer"
+                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
                   >
-                    <ArrowLeft className="w-3.5 h-3.5 mr-1.5" />
+                    <ArrowLeft className="w-4 h-4 mr-1.5" />
                     <span>Back</span>
                   </button>
                   <button
@@ -2005,16 +2036,16 @@ function WizardContent() {
                       setStepErrors({});
                       navigateToStep(5);
                     }}
-                    className="inline-flex items-center px-4 py-2 bg-[#6b47ff] text-white text-xs font-semibold rounded-lg hover:bg-[#5833e6] shadow-xs transition-colors cursor-pointer"
+                    className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                   >
                     <span>Continue</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                    <ArrowRight className="w-4 h-4 ml-1.5" />
                   </button>
                 </div>
               </motion.div>
             )}
 
-            {/* ================= STEP 5: PRODUCT TYPES (DARK GREY SELECTION) ================= */}
+            {/* ================= STEP 5: PRODUCT TYPES (VIBRANT COLOR SELECTION) ================= */}
             {currentStep === 5 && (
               <motion.div
                 key="step-5"
@@ -2025,22 +2056,26 @@ function WizardContent() {
               >
                 <div className="flex items-center justify-between">
                   <div className="space-y-1">
-                    <div className="flex items-center gap-2.5">
-                      <Cpu className="w-5 h-5 text-neutral-800" />
-                      <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                        Product Platforms & Types
-                      </h2>
+                    <div className="flex items-center gap-3">
+                      <div className="p-2.5 rounded-2xl bg-gradient-to-br from-amber-500 via-indigo-600 to-purple-600 text-white shadow-md shadow-amber-500/25 shrink-0">
+                        <Cpu className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-purple-950 to-indigo-900 bg-clip-text text-transparent">
+                          Product Platforms & Types
+                        </h2>
+                        <p className="text-xs sm:text-sm font-medium text-slate-500">
+                          Select all applications to be developed.
+                        </p>
+                      </div>
                     </div>
-                    <p className="text-xs sm:text-sm text-neutral-500">
-                      Select all applications to be developed.
-                    </p>
                   </div>
                   <button
                     type="button"
                     onClick={() => setShowAddTypeModal(true)}
-                    className="inline-flex items-center gap-1 text-xs font-medium text-neutral-600 hover:text-neutral-900 border border-neutral-200 px-2.5 py-1 rounded-md cursor-pointer hover:bg-neutral-50 transition-colors"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 px-3 py-1.5 rounded-xl cursor-pointer transition-all shadow-2xs"
                   >
-                    <Plus className="w-3.5 h-3.5" />
+                    <Plus className="w-3.5 h-3.5 text-indigo-600" />
                     <span>Custom</span>
                   </button>
                 </div>
@@ -2050,36 +2085,38 @@ function WizardContent() {
                   <motion.div
                     initial={{ opacity: 0, y: -4 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-800 text-xs font-medium flex items-center gap-2.5"
+                    className="p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs font-semibold flex items-center gap-2.5"
                   >
-                    <AlertCircle className="w-4 h-4 text-red-600 shrink-0" />
+                    <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
                     <span>{stepErrors.productTypes}</span>
                   </motion.div>
                 )}
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-[320px] overflow-y-auto pr-1">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[320px] overflow-y-auto pr-1">
                   {availableProductTypes.map((pt) => {
                     const isSelected = selectedTypeIds.includes(pt.id);
                     return (
                       <div
                         key={pt.id}
                         onClick={() => toggleProductType(pt.id)}
-                        className={`p-3 rounded-lg border text-xs cursor-pointer transition-all flex items-center justify-between select-none ${
+                        className={`p-3.5 rounded-xl border text-xs cursor-pointer transition-all flex items-center justify-between select-none ${
                           isSelected
-                            ? 'bg-white border-neutral-900 shadow-2xs text-neutral-900'
-                            : 'bg-white border-neutral-200 hover:border-neutral-300 text-neutral-800'
+                            ? 'bg-gradient-to-r from-indigo-50 via-purple-50 to-blue-50/80 border-2 border-indigo-600 text-indigo-950 font-bold shadow-md shadow-indigo-500/10 scale-[1.01]'
+                            : 'bg-white border-slate-200/90 hover:border-indigo-300 hover:bg-indigo-50/20 text-slate-800 font-medium hover:scale-[1.005]'
                         }`}
                       >
                         <div className="flex flex-col min-w-0 pr-2">
-                          <span className="font-medium truncate">{pt.name}</span>
+                          <span className="truncate">{pt.name}</span>
                           {pt.note && (
-                            <span className="text-[11px] text-neutral-500 truncate mt-0.5">
+                            <span className="text-[11px] text-slate-500 truncate mt-0.5 font-normal">
                               Note: {pt.note}
                             </span>
                           )}
                         </div>
                         {isSelected && (
-                          <Check className="w-4 h-4 text-emerald-600 stroke-[2.5] shrink-0 ml-2" />
+                          <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 ml-2 shadow-xs">
+                            <Check className="w-3.5 h-3.5 stroke-[3]" />
+                          </div>
                         )}
                       </div>
                     );
@@ -2093,9 +2130,9 @@ function WizardContent() {
                       setStepErrors({});
                       navigateToStep(4);
                     }}
-                    className="inline-flex items-center px-3.5 py-2 text-xs text-neutral-600 hover:text-neutral-900 transition-colors cursor-pointer"
+                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
                   >
-                    <ArrowLeft className="w-3.5 h-3.5 mr-1.5" />
+                    <ArrowLeft className="w-4 h-4 mr-1.5" />
                     <span>Back</span>
                   </button>
                   <button
@@ -2108,18 +2145,18 @@ function WizardContent() {
                       setStepErrors({});
                       navigateToStep(6, 0);
                     }}
-                    className="inline-flex items-center px-4 py-2 bg-[#6b47ff] text-white text-xs font-semibold rounded-lg hover:bg-[#5833e6] shadow-xs transition-colors cursor-pointer"
+                    className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                   >
                     <span>Start Questions ({subModuleQuestions.length})</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                    <ArrowRight className="w-4 h-4 ml-1.5" />
                   </button>
                 </div>
 
                 {showAddTypeModal && (
-                  <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-neutral-950/20 backdrop-blur-xs">
-                    <div className="bg-white rounded-xl p-5 max-w-lg w-full border border-neutral-200 space-y-4 shadow-lg max-h-[90vh] overflow-y-auto">
-                      <div className="flex items-center justify-between border-b border-neutral-100 pb-2">
-                        <h4 className="text-sm font-bold text-neutral-900">Add Custom Product Type & Modules</h4>
+                  <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/40 backdrop-blur-md">
+                    <div className="bg-white rounded-3xl p-6 max-w-lg w-full border border-indigo-100 space-y-4 shadow-2xl max-h-[90vh] overflow-y-auto">
+                      <div className="flex items-center justify-between border-b border-indigo-50 pb-3">
+                        <h4 className="text-base font-extrabold text-slate-900 bg-gradient-to-r from-indigo-900 to-purple-900 bg-clip-text text-transparent">Add Custom Product Type & Modules</h4>
                         <button
                           type="button"
                           onClick={() => {
@@ -2130,7 +2167,7 @@ function WizardContent() {
                             setNewSubModulesText('');
                             setCustomTypeModules([]);
                           }}
-                          className="text-neutral-400 hover:text-neutral-600 text-xs font-semibold p-1"
+                          className="w-7 h-7 rounded-full bg-slate-100 hover:bg-rose-100 hover:text-rose-600 text-slate-500 text-xs font-bold flex items-center justify-center transition-colors"
                         >
                           ✕
                         </button>
@@ -2138,7 +2175,7 @@ function WizardContent() {
 
                       {/* Product Type Name */}
                       <div className="space-y-1">
-                        <label className="block text-[11px] font-semibold text-neutral-700">
+                        <label className="block text-xs font-semibold text-slate-700">
                           Product Type / Platform Name *
                         </label>
                         <input
@@ -2147,22 +2184,22 @@ function WizardContent() {
                           value={newCustomTypeName}
                           onChange={(e) => setNewCustomTypeName(e.target.value)}
                           placeholder="e.g. Telemedicine Web App, Fleet Management Portal"
-                          className="w-full px-3 py-1.5 text-xs border border-neutral-200 rounded-md focus:border-neutral-800 focus:outline-none"
+                          className="w-full px-4 py-2.5 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15 focus:outline-none transition-all font-medium"
                         />
                       </div>
 
                       {/* Main Modules & Sub-Modules Builder */}
-                      <div className="space-y-2.5 pt-1 border-t border-neutral-100">
+                      <div className="space-y-2.5 pt-2 border-t border-indigo-50">
                         <div className="flex items-center justify-between">
-                          <label className="block text-[11px] font-semibold text-neutral-700">
+                          <label className="block text-xs font-semibold text-slate-700">
                             Product Main Modules & Sub-Modules
                           </label>
-                          <span className="text-[10px] text-neutral-400">Specify modules & sub-modules</span>
+                          <span className="text-[10px] font-medium text-slate-400">Specify modules & sub-modules</span>
                         </div>
 
-                        <div className="p-3 bg-neutral-50 rounded-lg border border-neutral-200 space-y-2">
+                        <div className="p-3.5 bg-indigo-50/40 rounded-2xl border border-indigo-100/80 space-y-2.5">
                           <div className="space-y-1">
-                            <label className="block text-[10px] font-medium text-neutral-600">
+                            <label className="block text-[11px] font-semibold text-indigo-900">
                               Main Module Name
                             </label>
                             <input
@@ -2170,11 +2207,11 @@ function WizardContent() {
                               value={newModuleName}
                               onChange={(e) => setNewModuleName(e.target.value)}
                               placeholder="e.g. Patient Consultation & EHR"
-                              className="w-full px-2.5 py-1.5 text-xs bg-white border border-neutral-200 rounded-md focus:border-neutral-800 focus:outline-none"
+                              className="w-full px-3 py-2 text-xs bg-white border border-slate-200 rounded-xl focus:border-indigo-600 focus:outline-none font-medium"
                             />
                           </div>
                           <div className="space-y-1">
-                            <label className="block text-[10px] font-medium text-neutral-600">
+                            <label className="block text-[11px] font-semibold text-indigo-900">
                               Sub-Modules / Core Features (comma-separated)
                             </label>
                             <input
@@ -2188,7 +2225,7 @@ function WizardContent() {
                                 }
                               }}
                               placeholder="e.g. Video Consultation, Digital Prescriptions, Chat History"
-                              className="w-full px-2.5 py-1.5 text-xs bg-white border border-neutral-200 rounded-md focus:border-neutral-800 focus:outline-none"
+                              className="w-full px-3 py-2 text-xs bg-white border border-slate-200 rounded-xl focus:border-indigo-600 focus:outline-none font-medium"
                             />
                           </div>
                           <div className="flex justify-end pt-1">
@@ -2196,9 +2233,9 @@ function WizardContent() {
                               type="button"
                               onClick={handleAddModuleToCustomType}
                               disabled={!newModuleName.trim()}
-                              className="inline-flex items-center gap-1 px-2.5 py-1 text-[11px] font-medium bg-neutral-800 text-white rounded-md hover:bg-neutral-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors"
+                              className="inline-flex items-center gap-1.5 px-3 py-1.5 text-xs font-bold bg-indigo-600 hover:bg-indigo-700 text-white rounded-xl disabled:opacity-40 disabled:cursor-not-allowed transition-colors shadow-xs"
                             >
-                              <Plus className="w-3 h-3" />
+                              <Plus className="w-3.5 h-3.5" />
                               <span>Add Module</span>
                             </button>
                           </div>
@@ -2206,19 +2243,19 @@ function WizardContent() {
 
                         {/* List of Added Modules */}
                         {customTypeModules.length > 0 ? (
-                          <div className="space-y-1.5 max-h-36 overflow-y-auto">
+                          <div className="space-y-2 max-h-36 overflow-y-auto">
                             {customTypeModules.map((m, idx) => (
                               <div
                                 key={idx}
-                                className="flex items-start justify-between p-2 rounded-md bg-white border border-neutral-200 text-xs"
+                                className="flex items-start justify-between p-2.5 rounded-xl bg-white border border-indigo-100 text-xs shadow-2xs"
                               >
                                 <div className="space-y-1 min-w-0 pr-2">
-                                  <div className="font-semibold text-neutral-900">{m.name}</div>
+                                  <div className="font-bold text-indigo-950">{m.name}</div>
                                   <div className="flex flex-wrap gap-1">
                                     {m.subModules.map((s, sIdx) => (
                                       <span
                                         key={sIdx}
-                                        className="inline-block px-1.5 py-0.5 bg-neutral-100 text-neutral-700 rounded text-[10px]"
+                                        className="inline-block px-2 py-0.5 bg-indigo-50 text-indigo-700 font-semibold rounded-md text-[10px]"
                                       >
                                         {s}
                                       </span>
@@ -2228,7 +2265,7 @@ function WizardContent() {
                                 <button
                                   type="button"
                                   onClick={() => handleRemoveModuleFromCustomType(idx)}
-                                  className="text-neutral-400 hover:text-red-600 p-1 text-xs shrink-0"
+                                  className="text-slate-400 hover:text-rose-600 p-1 text-xs shrink-0"
                                   title="Remove module"
                                 >
                                   ✕
@@ -2237,19 +2274,19 @@ function WizardContent() {
                             ))}
                           </div>
                         ) : (
-                          <p className="text-[11px] text-neutral-500 italic">
+                          <p className="text-[11px] text-slate-500 italic">
                             No custom modules added yet. (If none added, a default Core Capabilities module will be created).
                           </p>
                         )}
                       </div>
 
                       {/* Note / Custom Specification */}
-                      <div className="space-y-2 pt-3 border-t border-neutral-200">
+                      <div className="space-y-2 pt-3 border-t border-slate-100">
                         <div className="space-y-0.5">
-                          <label className="block text-xs font-semibold text-neutral-800">
+                          <label className="block text-xs font-semibold text-slate-800">
                             Custom Specifications & Rules (Optional)
                           </label>
-                          <p className="text-[11px] text-neutral-500 leading-normal">
+                          <p className="text-[11px] text-slate-500 leading-normal">
                             Enter any custom architecture rules, regulatory compliance specs, or technical constraints. Separate multiple rules with new lines.
                           </p>
                         </div>
@@ -2258,11 +2295,11 @@ function WizardContent() {
                           value={newCustomTypeNote}
                           onChange={(e) => setNewCustomTypeNote(e.target.value)}
                           placeholder="e.g.&#10;• HIPAA & SOC2 Compliant Cloud Storage&#10;• Live WebRTC Media Streaming with Low Latency&#10;• Automated Audit Logs for all prescription changes"
-                          className="w-full px-3 py-2 text-xs border border-neutral-200 rounded-lg focus:border-neutral-800 focus:outline-none resize-none leading-relaxed font-sans"
+                          className="w-full px-3.5 py-2 text-xs border border-slate-200 rounded-xl focus:border-indigo-600 focus:outline-none resize-none leading-relaxed font-sans"
                         />
                       </div>
 
-                      <div className="flex justify-end space-x-2 pt-2 border-t border-neutral-100">
+                      <div className="flex justify-end space-x-2 pt-2 border-t border-slate-100">
                         <button
                           type="button"
                           onClick={() => {
@@ -2273,7 +2310,7 @@ function WizardContent() {
                             setNewSubModulesText('');
                             setCustomTypeModules([]);
                           }}
-                          className="px-3 py-1.5 text-xs text-neutral-500 hover:text-neutral-800 transition-colors"
+                          className="px-4 py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors"
                         >
                           Cancel
                         </button>
@@ -2281,7 +2318,7 @@ function WizardContent() {
                           type="button"
                           onClick={handleAddCustomType}
                           disabled={!newCustomTypeName.trim() && customTypeModules.length === 0 && !newModuleName.trim()}
-                          className="px-3.5 py-1.5 text-xs font-semibold bg-[#6b47ff] text-white rounded-md hover:bg-[#5833e6] disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer"
+                          className="px-4 py-2 text-xs font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl hover:from-indigo-700 hover:to-purple-700 disabled:opacity-40 disabled:cursor-not-allowed transition-colors cursor-pointer shadow-md"
                         >
                           Save Product Type & Modules
                         </button>
@@ -2305,21 +2342,21 @@ function WizardContent() {
                   {/* Header & Question */}
                   <div className="space-y-3.5">
                     {/* Breadcrumb */}
-                    <div className="flex items-center gap-1.5 flex-wrap">
-                      <span className="text-[10px] font-semibold text-neutral-400 tracking-wider uppercase">
+                    <div className="flex items-center gap-2 flex-wrap">
+                      <span className="text-[10px] font-bold px-2 py-0.5 bg-indigo-100 text-indigo-800 rounded-md tracking-wider uppercase">
                         {currentQuestion.productTypeName}
                       </span>
-                      <span className="text-[10px] text-neutral-300">›</span>
-                      <span className="text-[10px] font-semibold text-neutral-400 tracking-wider uppercase">
+                      <span className="text-[10px] text-slate-300">›</span>
+                      <span className="text-[10px] font-bold px-2 py-0.5 bg-purple-100 text-purple-800 rounded-md tracking-wider uppercase">
                         {currentQuestion.moduleName}
                       </span>
-                      <span className="text-[10px] text-neutral-300">›</span>
-                      <span className="text-[10px] font-semibold text-neutral-600 tracking-wider uppercase">
+                      <span className="text-[10px] text-slate-300">›</span>
+                      <span className="text-[10px] font-bold px-2 py-0.5 bg-blue-100 text-blue-800 rounded-md tracking-wider uppercase">
                         {currentQuestion.subModuleName}
                       </span>
                     </div>
 
-                    <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900 leading-snug pt-1">
+                    <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 leading-snug pt-1">
                       {toQuestion(currentQuestion.subModuleName, currentQuestion.moduleName)}
                     </h2>
                   </div>
@@ -2330,47 +2367,49 @@ function WizardContent() {
                       <button
                         type="button"
                         onClick={() => setShowAddOptionModal(true)}
-                        className="inline-flex items-center text-[11px] font-medium text-neutral-600 hover:text-neutral-900 border border-dashed border-neutral-300 hover:border-neutral-400 px-2.5 py-1 rounded-lg bg-neutral-50 hover:bg-neutral-100 transition-all cursor-pointer"
+                        className="inline-flex items-center text-xs font-bold text-indigo-700 bg-indigo-50 hover:bg-indigo-100 border border-indigo-200 px-3 py-1.5 rounded-xl transition-all cursor-pointer shadow-2xs"
                       >
-                        <Plus className="w-3 h-3 mr-1 text-neutral-400" />
+                        <Plus className="w-3.5 h-3.5 mr-1 text-indigo-600" />
                         Add custom option
                       </button>
                     </div>
 
                     {/* Options grid */}
                     {currentQuestion.options.length > 0 ? (
-                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 max-h-[280px] overflow-y-auto pr-1">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 max-h-[280px] overflow-y-auto pr-1">
                         {currentQuestion.options.map((opt) => {
                           const isSelected = selectedOptionIds.includes(opt.id);
                           return (
                             <div
                               key={opt.id}
                               onClick={() => toggleOption(opt.id)}
-                              className={`px-3.5 py-2.5 rounded-lg border text-xs cursor-pointer transition-all flex items-center justify-between select-none ${
+                              className={`p-3.5 rounded-xl border text-xs cursor-pointer transition-all flex items-center justify-between select-none ${
                                 isSelected
-                                  ? 'bg-white border-neutral-900 shadow-2xs text-neutral-900'
-                                  : 'bg-white border-neutral-200 hover:border-neutral-400 text-neutral-700'
+                                  ? 'bg-gradient-to-r from-indigo-50 via-purple-50 to-blue-50/80 border-2 border-indigo-600 text-indigo-950 font-bold shadow-md shadow-indigo-500/10 scale-[1.01]'
+                                  : 'bg-white border-slate-200/90 hover:border-indigo-300 hover:bg-indigo-50/20 text-slate-800 font-medium hover:scale-[1.005]'
                               }`}
                             >
                               <div className="flex flex-col min-w-0 pr-2">
-                                <span className="font-medium text-neutral-900">
+                                <span className="truncate">
                                   {opt.name}
                                 </span>
                                 {opt.note && (
-                                  <span className="text-[11px] text-neutral-500 line-clamp-2 mt-0.5">
+                                  <span className="text-[11px] text-slate-500 line-clamp-2 mt-0.5 font-normal">
                                     Note: {opt.note}
                                   </span>
                                 )}
                               </div>
                               {isSelected && (
-                                <Check className="w-4 h-4 text-emerald-600 stroke-[2.5] shrink-0 ml-2.5" />
+                                <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 ml-2 shadow-xs">
+                                  <Check className="w-3.5 h-3.5 stroke-[3]" />
+                                </div>
                               )}
                             </div>
                           );
                         })}
                       </div>
                     ) : (
-                      <div className="py-4 text-center text-xs text-neutral-400 border border-dashed border-neutral-200 rounded-lg">
+                      <div className="py-6 text-center text-xs text-slate-400 border-2 border-dashed border-slate-200 rounded-2xl bg-slate-50/50">
                         No predefined options. Click &ldquo;Add custom option&rdquo; to add one.
                       </div>
                     )}
@@ -2378,10 +2417,10 @@ function WizardContent() {
                     {/* Optional Custom Specification Rule for this Sub-Module */}
                     <div className="pt-2.5 space-y-1">
                       <div className="flex items-center justify-between">
-                        <label className="block text-[11px] font-medium text-neutral-600">
+                        <label className="block text-[11px] font-semibold text-slate-700">
                           Custom Specification Rule / Requirement (Optional)
                         </label>
-                        <span className="text-[10px] text-neutral-400">Generates on PDF</span>
+                        <span className="text-[10px] font-medium text-slate-400">Generates on PDF</span>
                       </div>
                       <input
                         type="text"
@@ -2394,7 +2433,7 @@ function WizardContent() {
                           }));
                         }}
                         placeholder="e.g. Must support automated failover and 256-bit AES data encryption..."
-                        className="w-full px-3 py-1.5 text-xs bg-white border border-neutral-200 rounded-lg focus:border-neutral-800 focus:outline-none placeholder:text-neutral-400"
+                        className="w-full px-3.5 py-2 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-indigo-600 focus:ring-4 focus:ring-indigo-500/15 focus:outline-none placeholder:text-slate-400 font-medium"
                       />
                     </div>
                   </div>
@@ -2406,7 +2445,7 @@ function WizardContent() {
                     <motion.div
                       initial={{ opacity: 0, y: -4 }}
                       animate={{ opacity: 1, y: 0 }}
-                      className="p-3 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 text-xs font-medium flex items-center justify-between gap-2.5"
+                      className="p-3.5 rounded-2xl bg-amber-50 border border-amber-200 text-amber-900 text-xs font-semibold flex items-center justify-between gap-2.5"
                     >
                       <div className="flex items-center gap-2">
                         <AlertCircle className="w-4 h-4 text-amber-600 shrink-0" />
@@ -2415,7 +2454,7 @@ function WizardContent() {
                       <button
                         type="button"
                         onClick={() => setQuestionWarning(null)}
-                        className="text-amber-700 hover:text-amber-900 text-[11px] font-semibold underline shrink-0 cursor-pointer"
+                        className="text-amber-700 hover:text-amber-950 text-xs font-bold underline shrink-0 cursor-pointer"
                       >
                         Dismiss
                       </button>
@@ -2434,17 +2473,17 @@ function WizardContent() {
                           navigateToStep(5);
                         }
                       }}
-                      className="inline-flex items-center px-3 py-1.5 text-xs text-neutral-600 hover:text-neutral-900 transition-colors cursor-pointer"
+                      className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
                     >
-                      <ArrowLeft className="w-3.5 h-3.5 mr-1.5" />
+                      <ArrowLeft className="w-4 h-4 mr-1.5" />
                       <span>Back</span>
                     </button>
 
-                    <div className="flex items-center gap-2">
+                    <div className="flex items-center gap-2.5">
                       <button
                         type="button"
                         onClick={handleSkipQuestion}
-                        className="inline-flex items-center px-3 py-1.5 text-xs text-neutral-600 hover:text-neutral-900 transition-colors cursor-pointer font-medium"
+                        className="inline-flex items-center px-3.5 py-2 text-xs text-slate-600 hover:text-slate-900 transition-colors cursor-pointer font-semibold"
                       >
                         <span>Skip</span>
                       </button>
@@ -2452,25 +2491,25 @@ function WizardContent() {
                       <button
                         type="button"
                         onClick={handleNextQuestion}
-                        className="inline-flex items-center px-4 py-2 bg-[#6b47ff] text-white text-xs font-semibold rounded-lg hover:bg-[#5833e6] shadow-xs transition-colors cursor-pointer"
+                        className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                       >
                         <span>
                           {currentQuestionIndex < subModuleQuestions.length - 1
                             ? 'Next Question'
                             : 'Continue to Tech Stack'}
                         </span>
-                        <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                        <ArrowRight className="w-4 h-4 ml-1.5" />
                       </button>
                     </div>
                   </div>
                 </div>
 
                 {showAddOptionModal && (
-                  <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-neutral-950/20 backdrop-blur-xs">
-                    <div className="bg-white rounded-xl p-5 max-w-sm w-full border border-neutral-200 space-y-3.5 shadow-lg">
-                      <h4 className="text-sm font-bold text-neutral-900">Add Custom Option</h4>
+                  <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-950/40 backdrop-blur-md">
+                    <div className="bg-white rounded-3xl p-6 max-w-sm w-full border border-indigo-100 space-y-4 shadow-2xl">
+                      <h4 className="text-base font-extrabold text-slate-900 bg-gradient-to-r from-indigo-900 to-purple-900 bg-clip-text text-transparent">Add Custom Option</h4>
                       <div className="space-y-1">
-                        <label className="block text-[11px] font-medium text-neutral-700">
+                        <label className="block text-xs font-semibold text-slate-700">
                           Option Name
                         </label>
                         <input
@@ -2485,11 +2524,11 @@ function WizardContent() {
                             }
                           }}
                           placeholder="Option name"
-                          className="w-full px-3 py-1.5 text-xs border border-neutral-200 rounded-md focus:border-neutral-800 focus:outline-none"
+                          className="w-full px-3.5 py-2 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-indigo-600 focus:outline-none font-medium"
                         />
                       </div>
                       <div className="space-y-1">
-                        <label className="block text-[11px] font-medium text-neutral-700">
+                        <label className="block text-xs font-semibold text-slate-700">
                           Note / Custom Specification
                         </label>
                         <textarea
@@ -2497,7 +2536,7 @@ function WizardContent() {
                           value={newCustomOptionNote}
                           onChange={(e) => setNewCustomOptionNote(e.target.value)}
                           placeholder={`e.g. specific requirements for ${currentQuestion?.subModuleName || 'this option'}...`}
-                          className="w-full px-3 py-1.5 text-xs border border-neutral-200 rounded-md focus:border-neutral-800 focus:outline-none resize-none"
+                          className="w-full px-3.5 py-2 text-xs bg-slate-50/70 border border-slate-200 rounded-xl focus:bg-white focus:border-indigo-600 focus:outline-none resize-none font-medium"
                         />
                       </div>
                       <div className="flex justify-end space-x-2 pt-2">
@@ -2508,14 +2547,14 @@ function WizardContent() {
                             setNewCustomOptionName('');
                             setNewCustomOptionNote('');
                           }}
-                          className="px-3 py-1 text-xs text-neutral-500 hover:text-neutral-800 transition-colors"
+                          className="px-3.5 py-2 text-xs font-semibold text-slate-600 hover:text-slate-900 transition-colors"
                         >
                           Cancel
                         </button>
                         <button
                           type="button"
                           onClick={handleAddCustomOption}
-                          className="px-3 py-1 text-xs bg-neutral-800 text-white rounded-md hover:bg-neutral-700 transition-colors"
+                          className="px-4 py-2 text-xs font-bold bg-gradient-to-r from-indigo-600 to-purple-600 text-white rounded-xl hover:from-indigo-700 hover:to-purple-700 transition-colors shadow-md"
                         >
                           Add Option
                         </button>
@@ -2537,21 +2576,25 @@ function WizardContent() {
               >
                 <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                   <div className="space-y-1">
-                    <div className="flex items-center gap-2.5">
-                      <Cpu className="w-5 h-5 text-neutral-800 shrink-0" />
-                      <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                        Technology & Hosting
-                      </h2>
+                    <div className="flex items-center gap-3">
+                      <div className="p-2.5 rounded-2xl bg-gradient-to-br from-indigo-500 via-blue-600 to-cyan-600 text-white shadow-md shadow-blue-500/25 shrink-0">
+                        <Cpu className="w-5 h-5 text-white" />
+                      </div>
+                      <div>
+                        <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-indigo-950 to-blue-900 bg-clip-text text-transparent">
+                          Technology & Hosting
+                        </h2>
+                        <p className="text-xs sm:text-sm font-medium text-slate-500">
+                          Specify your technical requirements or leave blank for recommendation.
+                        </p>
+                      </div>
                     </div>
-                    <p className="text-xs sm:text-sm text-neutral-500">
-                      Specify your technical requirements or leave blank for recommendation.
-                    </p>
                   </div>
                   <div className="flex items-center gap-2.5 shrink-0 self-start sm:self-center">
                     <button
                       type="button"
                       onClick={() => setTechStack(EMPTY_TECH_STACK)}
-                      className="inline-flex items-center justify-center px-3.5 py-2 text-xs font-semibold text-neutral-700 bg-white hover:bg-neutral-50 border border-neutral-200 rounded-lg shadow-2xs hover:border-neutral-300 transition-all whitespace-nowrap cursor-pointer"
+                      className="inline-flex items-center justify-center px-3.5 py-2 text-xs font-semibold text-slate-700 bg-slate-100 hover:bg-slate-200 border border-slate-200 rounded-xl transition-all whitespace-nowrap cursor-pointer"
                     >
                       <span>Clear all</span>
                     </button>
@@ -2559,7 +2602,7 @@ function WizardContent() {
                       type="button"
                       disabled={isLoadingRecommendations}
                       onClick={handleLoadRecommendations}
-                      className="inline-flex items-center justify-center px-4 py-2 bg-[#6b47ff] hover:bg-[#5833e6] disabled:opacity-60 text-white text-xs font-semibold rounded-lg shadow-xs hover:shadow transition-all whitespace-nowrap cursor-pointer"
+                      className="inline-flex items-center justify-center px-4 py-2 bg-gradient-to-r from-indigo-600 via-purple-600 to-blue-600 hover:from-indigo-700 hover:to-blue-700 disabled:opacity-60 text-white text-xs font-bold rounded-xl shadow-md shadow-indigo-500/20 transition-all whitespace-nowrap cursor-pointer"
                     >
                       {isLoadingRecommendations ? (
                         <>
@@ -2573,10 +2616,10 @@ function WizardContent() {
                   </div>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
                   {Object.entries(techStack).map(([key, val]) => (
-                    <div key={key} className="p-3 bg-neutral-50/60 border border-neutral-200 rounded-lg">
-                      <label className="block text-[10px] uppercase font-semibold tracking-wider text-neutral-500 mb-1">
+                    <div key={key} className="p-3.5 bg-slate-50/80 border border-indigo-100/70 rounded-2xl hover:border-indigo-300 transition-all">
+                      <label className="block text-[10px] uppercase font-extrabold tracking-wider text-indigo-700 mb-1">
                         {key.replace(/([A-Z])/g, ' $1')}
                       </label>
                       <input
@@ -2584,7 +2627,7 @@ function WizardContent() {
                         value={val}
                         placeholder="Leave blank or specify..."
                         onChange={(e) => setTechStack(prev => ({ ...prev, [key]: e.target.value }))}
-                        className="w-full text-xs font-medium bg-transparent border-0 p-0 focus:outline-none text-neutral-900 placeholder:text-neutral-400"
+                        className="w-full text-xs font-bold bg-transparent border-0 p-0 focus:outline-none text-slate-900 placeholder:text-slate-400"
                       />
                     </div>
                   ))}
@@ -2596,33 +2639,33 @@ function WizardContent() {
                     onClick={() => {
                       navigateToStep(6, subModuleQuestions.length > 0 ? subModuleQuestions.length - 1 : 0);
                     }}
-                    className="inline-flex items-center px-3.5 py-2 text-xs text-neutral-600 hover:text-neutral-900 transition-colors cursor-pointer"
+                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
                   >
-                    <ArrowLeft className="w-3.5 h-3.5 mr-1.5" />
+                    <ArrowLeft className="w-4 h-4 mr-1.5" />
                     <span>Back</span>
                   </button>
-                  <div className="flex items-center gap-2">
+                  <div className="flex items-center gap-2.5">
                     <button
                       type="button"
                       onClick={() => navigateToStep(8)}
-                      className="inline-flex items-center px-3 py-1.5 text-xs text-neutral-600 hover:text-neutral-900 transition-colors cursor-pointer font-medium"
+                      className="inline-flex items-center px-3.5 py-2 text-xs text-slate-600 hover:text-slate-900 transition-colors cursor-pointer font-semibold"
                     >
                       <span>Skip</span>
                     </button>
                     <button
                       type="button"
                       onClick={() => navigateToStep(8)}
-                      className="inline-flex items-center px-4 py-2 bg-[#6b47ff] text-white text-xs font-semibold rounded-lg hover:bg-[#5833e6] shadow-xs transition-colors cursor-pointer"
+                      className="inline-flex items-center px-5 py-2.5 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white text-xs font-bold rounded-xl shadow-lg shadow-indigo-500/25 hover:shadow-indigo-500/40 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                     >
                       <span>Continue</span>
-                      <ArrowRight className="w-3.5 h-3.5 ml-1.5" />
+                      <ArrowRight className="w-4 h-4 ml-1.5" />
                     </button>
                   </div>
                 </div>
               </motion.div>
             )}
 
-            {/* ================= STEP 8: PAYMENT SPLITUPS (DARK GREY SELECTION) ================= */}
+            {/* ================= STEP 8: PAYMENT SPLITUPS (VIBRANT COLOR SELECTION) ================= */}
             {currentStep === 8 && (
               <motion.div
                 key="step-8"
@@ -2632,90 +2675,102 @@ function WizardContent() {
                 className="space-y-6"
               >
                 <div className="space-y-1">
-                  <div className="flex items-center gap-2.5">
-                    <ReceiptText className="w-5 h-5 text-neutral-800" />
-                    <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-neutral-900">
-                      Commercial Splitup
-                    </h2>
+                  <div className="flex items-center gap-3">
+                    <div className="p-2.5 rounded-2xl bg-gradient-to-br from-emerald-500 via-teal-600 to-indigo-600 text-white shadow-md shadow-emerald-500/25 shrink-0">
+                      <ReceiptText className="w-5 h-5 text-white" />
+                    </div>
+                    <div>
+                      <h2 className="text-xl sm:text-2xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-emerald-950 to-indigo-900 bg-clip-text text-transparent">
+                        Commercial Splitup
+                      </h2>
+                      <p className="text-xs sm:text-sm font-medium text-slate-500">
+                        Select your milestone percentage release schedule.
+                      </p>
+                    </div>
                   </div>
-                  <p className="text-xs sm:text-sm text-neutral-500">
-                    Select your milestone percentage release schedule.
-                  </p>
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3.5 pt-2">
                   <div
                     onClick={() => setSplitupType('40-30-30')}
-                    className={`p-4 rounded-xl border cursor-pointer transition-all space-y-2 select-none ${
+                    className={`p-4.5 rounded-2xl border cursor-pointer transition-all space-y-2 select-none ${
                       splitupType === '40-30-30'
-                        ? 'bg-white border-neutral-900 shadow-xs ring-1 ring-neutral-900/10'
-                        : 'bg-white border-neutral-200 hover:border-neutral-300'
+                        ? 'bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-50/80 border-2 border-indigo-600 text-indigo-950 font-bold shadow-lg shadow-indigo-500/15 scale-[1.01]'
+                        : 'bg-white border-slate-200/90 hover:border-indigo-300 hover:bg-indigo-50/20 text-slate-800'
                     }`}
                   >
                     <div className="flex items-center justify-between">
-                      <div className="text-xs font-bold text-neutral-900">40 - 30 - 30 Split</div>
+                      <div className="text-xs font-extrabold text-indigo-950">40 - 30 - 30 Split</div>
                       {splitupType === '40-30-30' && (
-                        <Check className="w-4 h-4 text-emerald-600 stroke-[2.5] shrink-0" />
+                        <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-xs">
+                          <Check className="w-3.5 h-3.5 stroke-[3]" />
+                        </div>
                       )}
                     </div>
-                    <div className="text-[11px] leading-relaxed text-neutral-500">
+                    <div className="text-[11px] leading-relaxed text-slate-600 font-medium">
                       40% Advance • 30% Midway (30 days) • 30% Post-UAT
                     </div>
                   </div>
 
                   <div
                     onClick={() => setSplitupType('50-50')}
-                    className={`p-4 rounded-xl border cursor-pointer transition-all space-y-2 select-none ${
+                    className={`p-4.5 rounded-2xl border cursor-pointer transition-all space-y-2 select-none ${
                       splitupType === '50-50'
-                        ? 'bg-white border-neutral-900 shadow-xs ring-1 ring-neutral-900/10'
-                        : 'bg-white border-neutral-200 hover:border-neutral-300'
+                        ? 'bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-50/80 border-2 border-indigo-600 text-indigo-950 font-bold shadow-lg shadow-indigo-500/15 scale-[1.01]'
+                        : 'bg-white border-slate-200/90 hover:border-indigo-300 hover:bg-indigo-50/20 text-slate-800'
                     }`}
                   >
                     <div className="flex items-center justify-between">
-                      <div className="text-xs font-bold text-neutral-900">50 - 50 Split</div>
+                      <div className="text-xs font-extrabold text-indigo-950">50 - 50 Split</div>
                       {splitupType === '50-50' && (
-                        <Check className="w-4 h-4 text-emerald-600 stroke-[2.5] shrink-0" />
+                        <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-xs">
+                          <Check className="w-3.5 h-3.5 stroke-[3]" />
+                        </div>
                       )}
                     </div>
-                    <div className="text-[11px] leading-relaxed text-neutral-500">
+                    <div className="text-[11px] leading-relaxed text-slate-600 font-medium">
                       50% Advance • 50% Post-UAT & Handover
                     </div>
                   </div>
 
                   <div
                     onClick={() => setSplitupType('40-20-20-20')}
-                    className={`p-4 rounded-xl border cursor-pointer transition-all space-y-2 select-none ${
+                    className={`p-4.5 rounded-2xl border cursor-pointer transition-all space-y-2 select-none ${
                       splitupType === '40-20-20-20'
-                        ? 'bg-white border-neutral-900 shadow-xs ring-1 ring-neutral-900/10'
-                        : 'bg-white border-neutral-200 hover:border-neutral-300'
+                        ? 'bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-50/80 border-2 border-indigo-600 text-indigo-950 font-bold shadow-lg shadow-indigo-500/15 scale-[1.01]'
+                        : 'bg-white border-slate-200/90 hover:border-indigo-300 hover:bg-indigo-50/20 text-slate-800'
                     }`}
                   >
                     <div className="flex items-center justify-between">
-                      <div className="text-xs font-bold text-neutral-900">4-Phase Split</div>
+                      <div className="text-xs font-extrabold text-indigo-950">4-Phase Split</div>
                       {splitupType === '40-20-20-20' && (
-                        <Check className="w-4 h-4 text-emerald-600 stroke-[2.5] shrink-0" />
+                        <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-xs">
+                          <Check className="w-3.5 h-3.5 stroke-[3]" />
+                        </div>
                       )}
                     </div>
-                    <div className="text-[11px] leading-relaxed text-neutral-500">
+                    <div className="text-[11px] leading-relaxed text-slate-600 font-medium">
                       40% Phase 1 • 20% Phase 2 • 20% Phase 3 • 20% Phase 4
                     </div>
                   </div>
 
                   <div
                     onClick={() => setSplitupType('100')}
-                    className={`p-4 rounded-xl border cursor-pointer transition-all space-y-2 select-none ${
+                    className={`p-4.5 rounded-2xl border cursor-pointer transition-all space-y-2 select-none ${
                       splitupType === '100'
-                        ? 'bg-white border-neutral-900 shadow-xs ring-1 ring-neutral-900/10'
-                        : 'bg-white border-neutral-200 hover:border-neutral-300'
+                        ? 'bg-gradient-to-br from-indigo-50 via-purple-50 to-indigo-50/80 border-2 border-indigo-600 text-indigo-950 font-bold shadow-lg shadow-indigo-500/15 scale-[1.01]'
+                        : 'bg-white border-slate-200/90 hover:border-indigo-300 hover:bg-indigo-50/20 text-slate-800'
                     }`}
                   >
                     <div className="flex items-center justify-between">
-                      <div className="text-xs font-bold text-neutral-900">Full Complete Payment</div>
+                      <div className="text-xs font-extrabold text-indigo-950">Full Complete Payment</div>
                       {splitupType === '100' && (
-                        <Check className="w-4 h-4 text-emerald-600 stroke-[2.5] shrink-0" />
+                        <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center shrink-0 shadow-xs">
+                          <Check className="w-3.5 h-3.5 stroke-[3]" />
+                        </div>
                       )}
                     </div>
-                    <div className="text-[11px] leading-relaxed text-neutral-500">
+                    <div className="text-[11px] leading-relaxed text-slate-600 font-medium">
                       100% Upfront • Single Complete Payment
                     </div>
                   </div>
@@ -2725,17 +2780,17 @@ function WizardContent() {
                   <button
                     type="button"
                     onClick={() => navigateToStep(7)}
-                    className="inline-flex items-center px-3.5 py-2 text-xs text-neutral-600 hover:text-neutral-900 transition-colors cursor-pointer"
+                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
                   >
-                    <ArrowLeft className="w-3.5 h-3.5 mr-1.5" />
+                    <ArrowLeft className="w-4 h-4 mr-1.5" />
                     <span>Back</span>
                   </button>
                   <button
                     type="button"
                     onClick={handleTriggerAIGeneration}
-                    className="inline-flex items-center px-5 py-2.5 bg-[#6b47ff] text-white text-xs font-semibold rounded-lg hover:bg-[#5833e6] shadow-xs transition-colors"
+                    className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-purple-600 via-indigo-600 via-pink-600 to-rose-600 hover:opacity-95 text-white text-xs font-extrabold rounded-xl shadow-xl shadow-purple-500/30 hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
                   >
-                    <Sparkles className="w-3.5 h-3.5 mr-1.5 text-amber-300" />
+                    <Sparkles className="w-4 h-4 mr-2 text-amber-300 animate-pulse" />
                     <span>Synthesize with AI</span>
                   </button>
                 </div>
@@ -2766,35 +2821,37 @@ function WizardContent() {
                 animate={{ opacity: 1 }}
                 className="space-y-6"
               >
-                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4 bg-neutral-800 text-white rounded-xl shadow-xs gap-3">
-                  <div className="flex items-center space-x-2">
-                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
-                    <span className="text-xs font-semibold">Enterprise Specification Ready</span>
+                <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between p-4.5 bg-gradient-to-r from-slate-900 via-indigo-950 to-purple-950 text-white rounded-2xl shadow-lg gap-3 border border-indigo-500/20">
+                  <div className="flex items-center space-x-2.5">
+                    <div className="w-6 h-6 rounded-full bg-emerald-500/20 border border-emerald-400/40 flex items-center justify-center shrink-0">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    </div>
+                    <span className="text-xs font-extrabold text-white">Enterprise Specification Ready</span>
                   </div>
 
                   <button
                     type="button"
                     disabled={isSaving}
                     onClick={handleSaveProject}
-                    className="inline-flex items-center px-4 py-1.5 bg-white text-neutral-900 text-xs font-semibold rounded-lg hover:bg-neutral-100 transition-colors cursor-pointer"
+                    className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-indigo-500 to-purple-600 text-white text-xs font-bold rounded-xl hover:from-indigo-600 hover:to-purple-700 transition-all shadow-md cursor-pointer"
                   >
-                    {isSaving ? <div className="loader loader-xs loader-black mr-1.5 shrink-0" /> : <FileText className="w-3 h-3 mr-1" />}
+                    {isSaving ? <div className="loader loader-xs loader-white mr-1.5 shrink-0" /> : <FileText className="w-3.5 h-3.5 mr-1.5" />}
                     <span>Save & View PDF</span>
                   </button>
                 </div>
 
-                <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3 bg-neutral-50 border border-neutral-200 rounded-lg text-xs gap-2">
-                  <span className="text-neutral-500 shrink-0">Filename:</span>
+                <div className="flex flex-col sm:flex-row sm:items-center justify-between p-3.5 bg-slate-50 border border-slate-200/90 rounded-xl text-xs gap-2">
+                  <span className="text-slate-600 font-bold shrink-0">Filename:</span>
                   <input
                     type="text"
                     value={customPdfName}
                     onChange={(e) => setCustomPdfName(e.target.value)}
-                    className="bg-white border border-neutral-200 px-2.5 py-1 rounded text-xs font-mono w-full sm:w-64 text-left sm:text-right focus:outline-none"
+                    className="bg-white border border-slate-200 px-3 py-1.5 rounded-lg text-xs font-mono w-full sm:w-64 text-left sm:text-right focus:border-indigo-600 focus:outline-none font-semibold text-slate-800"
                   />
                 </div>
 
                 {/* Official 10-Section Document Preview (1:1 Exact Parity with Downloaded PDF) */}
-                <div className="border border-neutral-200 rounded-2xl p-2 sm:p-6 lg:p-8 bg-white shadow-xs overflow-x-auto">
+                <div className="border border-slate-200 rounded-2xl p-2 sm:p-6 lg:p-8 bg-white shadow-sm overflow-x-auto">
                   <div className="min-w-[580px] sm:min-w-0">
                     <OfficialNutzDocument project={previewProject} isPrintView={false} />
                   </div>
@@ -2805,9 +2862,9 @@ function WizardContent() {
                   <motion.div
                     initial={{ opacity: 0, y: -4 }}
                     animate={{ opacity: 1, y: 0 }}
-                    className="p-3.5 rounded-xl bg-red-50 border border-red-200 text-red-800 text-xs font-medium flex items-center gap-2.5 mt-4"
+                    className="p-3.5 rounded-2xl bg-rose-50 border border-rose-200 text-rose-800 text-xs font-semibold flex items-center gap-2.5 mt-4"
                   >
-                    <AlertCircle className="w-4 h-4 text-red-600 shrink-0" />
+                    <AlertCircle className="w-4 h-4 text-rose-600 shrink-0" />
                     <span>{saveError}</span>
                   </motion.div>
                 )}
@@ -2816,9 +2873,9 @@ function WizardContent() {
                   <button
                     type="button"
                     onClick={() => navigateToStep(8)}
-                    className="inline-flex items-center px-3.5 py-2 text-xs text-neutral-600 hover:text-neutral-900 transition-colors cursor-pointer"
+                    className="inline-flex items-center px-4 py-2.5 bg-slate-100 hover:bg-indigo-50 hover:text-indigo-700 text-slate-700 text-xs font-bold rounded-xl transition-all cursor-pointer"
                   >
-                    <ArrowLeft className="w-3.5 h-3.5 mr-1.5" />
+                    <ArrowLeft className="w-4 h-4 mr-1.5" />
                     <span>Back to Payment Splits</span>
                   </button>
 
@@ -2827,9 +2884,9 @@ function WizardContent() {
                       type="button"
                       disabled={isSaving}
                       onClick={handleSaveProject}
-                      className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-2.5 bg-[#6b47ff] hover:bg-[#5833e6] text-white text-xs font-semibold rounded-lg transition-colors shadow-xs cursor-pointer"
+                      className="w-full sm:w-auto inline-flex items-center justify-center px-6 py-3 bg-gradient-to-r from-indigo-600 via-purple-600 to-pink-600 hover:from-indigo-700 hover:via-purple-700 hover:to-pink-700 text-white text-xs font-extrabold rounded-xl transition-all shadow-xl shadow-indigo-500/25 hover:scale-[1.02] active:scale-[0.98] cursor-pointer"
                     >
-                      {isSaving ? <div className="loader loader-xs loader-white mr-1.5 shrink-0" /> : <Check className="w-3.5 h-3.5 mr-1.5" />}
+                      {isSaving ? <div className="loader loader-xs loader-white mr-1.5 shrink-0" /> : <Check className="w-4 h-4 mr-2" />}
                       <span>Save Project & Export PDF</span>
                     </button>
                   </div>
