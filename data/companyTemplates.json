@@ -1,0 +1,1223 @@
+{
+  "activeTemplateId": "tpl-fast-track",
+  "templates": [
+    {
+      "id": "tpl-default-enterprise",
+      "name": "Official Enterprise Specification Standard",
+      "description": "Nutz Technovation standard master template for enterprise applications and digital transformations.",
+      "isDefault": true,
+      "companyInfo": {
+        "name": "Nutz Technovation Private Limited",
+        "developmentTeam": "Nutz Technovation Private Limited",
+        "defaultDuration": "60 Working Days",
+        "tagline": "making sense",
+        "supportDays": 30
+      },
+      "requirements": [
+        {
+          "id": "req-1",
+          "requirement": "Functional Requirement Document (FRD)",
+          "when": "Before project commencement",
+          "responsibility": "Client",
+          "enabled": true,
+          "order": 1
+        },
+        {
+          "id": "req-2",
+          "requirement": "User Stories & Business Workflows",
+          "when": "Before project commencement",
+          "responsibility": "Client",
+          "enabled": true,
+          "order": 2
+        },
+        {
+          "id": "req-3",
+          "requirement": "UI/UX Design Approval",
+          "when": "Before project commencement",
+          "responsibility": "Client",
+          "enabled": true,
+          "order": 3
+        },
+        {
+          "id": "req-4",
+          "requirement": "Brand Assets (Logo, Images, Icons & Content)",
+          "when": "Before project commencement",
+          "responsibility": "Client",
+          "enabled": true,
+          "order": 4
+        },
+        {
+          "id": "req-5",
+          "requirement": "Domain & DNS Access",
+          "when": "Before deployment",
+          "responsibility": "Client",
+          "enabled": true,
+          "order": 5
+        },
+        {
+          "id": "req-6",
+          "requirement": "Server / VPS Access",
+          "when": "Before deployment",
+          "responsibility": "Client",
+          "enabled": true,
+          "order": 6
+        },
+        {
+          "id": "req-7",
+          "requirement": "WhatsApp Business API",
+          "when": "Before integration",
+          "responsibility": "Client",
+          "enabled": true,
+          "order": 7
+        },
+        {
+          "id": "req-8",
+          "requirement": "SMS Gateway Credentials",
+          "when": "Before integration",
+          "responsibility": "Client",
+          "enabled": true,
+          "order": 8
+        },
+        {
+          "id": "req-9",
+          "requirement": "Payment Gateway Credentials",
+          "when": "Before integration",
+          "responsibility": "Client",
+          "enabled": true,
+          "order": 9
+        }
+      ],
+      "deliverables": [
+        {
+          "id": "del-1",
+          "deliverable": "Complete Source Code",
+          "stage": "Maintenance",
+          "responsibility": "Nutz",
+          "order": 1
+        },
+        {
+          "id": "del-2",
+          "deliverable": "Deployment & Production Rollout",
+          "stage": "Maintenance",
+          "responsibility": "Nutz",
+          "order": 2
+        },
+        {
+          "id": "del-3",
+          "deliverable": "Knowledge Transfer",
+          "stage": "Maintenance",
+          "responsibility": "Nutz",
+          "order": 3
+        },
+        {
+          "id": "del-4",
+          "deliverable": "30 Days Support & Maintenance",
+          "stage": "Maintenance",
+          "responsibility": "Nutz",
+          "order": 4
+        },
+        {
+          "id": "del-5",
+          "deliverable": "Server Credentials, User Manuals, Configuration Documents & Deployment Guides",
+          "stage": "Maintenance",
+          "responsibility": "Nutz",
+          "order": 5
+        },
+        {
+          "id": "del-6",
+          "deliverable": "Architecture Documents, API Documentation, Database Design, UI/UX Assets & Technical Guides",
+          "stage": "Maintenance",
+          "responsibility": "Nutz",
+          "order": 6
+        }
+      ],
+      "techStack": {
+        "frontendFramework": "Next.js",
+        "backendRuntime": "Node.js",
+        "backendFramework": "Express.js",
+        "database": "PostgreSQL",
+        "orm": "Sequelize",
+        "programmingLanguage": "TypeScript",
+        "uiFramework": "Tailwind CSS",
+        "uiComponents": "Shadcn/UI",
+        "hosting": "VPS / Cloud",
+        "versionControl": "GitHub",
+        "ciCd": "GitHub Actions"
+      },
+      "communication": [
+        {
+          "id": "comm-1",
+          "function": "Development Sync & Updates",
+          "means": "GitHub, Google Meet, In Person",
+          "notes": "Sprint planning, development tracking and technical discussions",
+          "order": 1
+        },
+        {
+          "id": "comm-2",
+          "function": "Project Updates",
+          "means": "WhatsApp, Email, Phone Calls",
+          "notes": "Official communication, approvals and project status updates",
+          "order": 2
+        }
+      ],
+      "additionalPricing": [
+        {
+          "id": "price-1",
+          "function": "Domain Registration",
+          "provider": "Third Party",
+          "estimate": "Need to be Purchased",
+          "notes": "Standard third-party commercial rate",
+          "order": 1
+        },
+        {
+          "id": "price-2",
+          "function": "Hosting / VPS",
+          "provider": "AWS / DigitalOcean / Cloud Provider",
+          "estimate": "Need to be Purchased",
+          "notes": "Standard third-party commercial rate",
+          "order": 2
+        },
+        {
+          "id": "price-3",
+          "function": "SMS Gateway",
+          "provider": "Third Party",
+          "estimate": "Based on Usage",
+          "notes": "Standard third-party commercial rate",
+          "order": 3
+        },
+        {
+          "id": "price-4",
+          "function": "WhatsApp Business API",
+          "provider": "Meta / BSP",
+          "estimate": "Based on Conversation Charges",
+          "notes": "Standard third-party commercial rate",
+          "order": 4
+        }
+      ],
+      "architectureFlows": {
+        "overallSystemFlow": "[ Client Devices / Browsers ]\n       │  (HTTPS / REST / WebSocket)\n       ▼\n[ Cloud Edge / CDN & API Gateway ]\n       │  (JWT Auth & Rate Limiting)\n       ▼\n[ Core Application Services Engine ]\n       │  (Microservices & Business Logic)\n       ├──► [ Primary SQL Database (PostgreSQL) ]\n       ├──► [ Memory Cache & Queue (Redis) ]\n       └──► [ Third-Party Integrations (SMS/Email/Payments) ]",
+        "highLevelArchitectureFlow": "+-----------------------------------------------------------+\n|                    PRESENTATION TIER                      |\n|  Next.js 14 Responsive Web App • Shadcn/UI • Tailwind     |\n+-----------------------------┬-----------------------------+\n                              │ REST / JSON APIs\n+-----------------------------▼-----------------------------+\n|                     APPLICATION TIER                      |\n|  Node.js / Express Backend • Business Rules Engine        |\n|  Role-Based Access Control • Audit Logging Service        |\n+-----------------------------┬-----------------------------+\n                              │ Prisma / Sequelize ORM\n+-----------------------------▼-----------------------------+\n|                      DATA STORE TIER                      |\n|  PostgreSQL RDBMS • Cloud Storage • Third-Party Gateways  |\n+-----------------------------------------------------------+",
+        "adminFlow": "[ Administrator Login ] ──► [ Multi-Factor Authentication ]\n                                    │\n                                    ▼\n                          [ Admin Control Console ]\n                                    │\n    ┌───────────────────────────────┼───────────────────────────────┐\n    ▼                               ▼                               ▼\n[ User & Role Management ]   [ Data Inspection & CMS ]   [ Audit Logs & Reports ]",
+        "phaseWiseFlow": "Phase 1 (Setup & Specs)    ──► Requirements Sign-off & Architecture Setup\nPhase 2 (Core Modules)     ──► Core Engine, Database Schemas & API Layer\nPhase 3 (Integrations)     ──► Third-Party APIs, UI Workflows & Notifications\nPhase 4 (UAT & Rollout)    ──► Quality Assurance, Production Deployment & SLA Handover"
+      },
+      "scopeDefaults": {
+        "strategicObjectives": "Deliver a robust, scalable, enterprise-grade digital platform engineered for high performance, modular maintainability, and seamless stakeholder workflows.",
+        "corporateProfile": "Enterprise Corporate Entity Profile and Business Transformation Footprint.",
+        "domainsFootprint": "Comprehensive Modular Web and Cloud Platform Footprint."
+      },
+      "implementationPhases": [
+        {
+          "phase": 1,
+          "title": "Phase 1: Architecture Blueprint, Entity Schema & Setup",
+          "duration": "15 Working Days",
+          "modules": [
+            "Infrastructure Provisioning",
+            "Database Schemas",
+            "Authentication & Security"
+          ],
+          "description": "Project kick-off, environment configuration, database structure design, and base API frameworks."
+        },
+        {
+          "phase": 2,
+          "title": "Phase 2: Core Capability Modules & Data Management",
+          "duration": "15 Working Days",
+          "modules": [
+            "Domain Operations",
+            "Business Workflows",
+            "API Endpoints"
+          ],
+          "description": "Implementation of primary business modules, transaction pipelines, and core functional services."
+        },
+        {
+          "phase": 3,
+          "title": "Phase 3: Integrations, User Portals & Automation",
+          "duration": "15 Working Days",
+          "modules": [
+            "External Gateways",
+            "User Portals",
+            "Notification Services"
+          ],
+          "description": "Third-party gateway integrations, responsive web interfaces, and automated notification services."
+        },
+        {
+          "phase": 4,
+          "title": "Phase 4: End-to-End Testing, UAT, Deployment & Handover",
+          "duration": "15 Working Days",
+          "modules": [
+            "Quality Assurance",
+            "Production Rollout",
+            "30-Day Support Initiation"
+          ],
+          "description": "Comprehensive testing, security hardening, user acceptance sign-off, live deployment, and warranty commencement."
+        }
+      ],
+      "paymentSplitups": {
+        "40-30-30": {
+          "type": "40-30-30",
+          "totalDurationDays": 60,
+          "milestones": [
+            {
+              "name": "Advance Payment (40%)",
+              "percentage": 40,
+              "timing": "Before Project Commencement"
+            },
+            {
+              "name": "Midway Milestone (30%)",
+              "percentage": 30,
+              "timing": "At 30 Working Days"
+            },
+            {
+              "name": "Project Completion (30%)",
+              "percentage": 30,
+              "timing": "After UAT & Handover"
+            }
+          ]
+        },
+        "50-50": {
+          "type": "50-50",
+          "totalDurationDays": 60,
+          "milestones": [
+            {
+              "name": "Advance Payment (50%)",
+              "percentage": 50,
+              "timing": "Before Project Commencement"
+            },
+            {
+              "name": "Project Completion (50%)",
+              "percentage": 50,
+              "timing": "After UAT & Handover"
+            }
+          ]
+        },
+        "40-20-20-20": {
+          "type": "40-20-20-20",
+          "totalDurationDays": 60,
+          "milestones": [
+            {
+              "name": "Phase 1 Advance (40%)",
+              "percentage": 40,
+              "timing": "Before Phase 1 Commencement"
+            },
+            {
+              "name": "Phase 2 Milestone (20%)",
+              "percentage": 20,
+              "timing": "Upon Phase 1 Delivery & Phase 2 Start"
+            },
+            {
+              "name": "Phase 3 Milestone (20%)",
+              "percentage": 20,
+              "timing": "Upon Phase 2 Delivery & Phase 3 Start"
+            },
+            {
+              "name": "Final Release & Handover (20%)",
+              "percentage": 20,
+              "timing": "After UAT, Handover & Deployment"
+            }
+          ]
+        }
+      },
+      "standardExclusions": [
+        "Domain Registration Charges",
+        "Hosting & Cloud Server Charges",
+        "Third-party API Charges",
+        "SMS Credits",
+        "WhatsApp Conversation Charges",
+        "Payment Gateway Transaction Charges",
+        "Government Registration Fees",
+        "Additional Modules",
+        "Change Requests Beyond Approved Scope",
+        "Native iOS & Android Mobile Applications and App Store / Play Store Submissions (Scope is restricted to Responsive Web Application).",
+        "Payment Gateway Direct Merchant Settlement, Automated Recurring Subscriptions, and PCI-DSS Financial Banking Compliance.",
+        "Third-Party Hardware Devices, POS Thermal Receipt Printers, Biometric Terminals, and IoT Sensor Firmware.",
+        "Custom Machine Learning Model Fine-Tuning and Dedicated GPU Training Cluster Maintenance.",
+        "Multi-Tenant Enterprise White-Labeling and Wildcard Sub-Domain DNS Automation.",
+        "Mass WhatsApp Marketing Broadcasting API Infrastructure and Cold Email Warmup Services.",
+        "Manual Data Entry, Legacy Database Cleansing, and Historical Paper Document OCR Scanning."
+      ],
+      "agreements": [
+        {
+          "id": "agr-1",
+          "agreement": "Phase 1 payment must be completed before project commencement.",
+          "order": 1
+        },
+        {
+          "id": "agr-2",
+          "agreement": "Advance payment for each phase is non-refundable once development has commenced.",
+          "order": 2
+        },
+        {
+          "id": "agr-3",
+          "agreement": "The project timeline begins only after receipt of all required assets, approvals and Phase 1 payment.",
+          "order": 3
+        },
+        {
+          "id": "agr-4",
+          "agreement": "Each subsequent phase will commence only after successful completion, client approval and payment of the previous phase.",
+          "order": 4
+        },
+        {
+          "id": "agr-5",
+          "agreement": "Any additional requirements beyond the approved Functional Requirement Document (FRD) shall be treated as Change Requests and quoted separately.",
+          "order": 5
+        },
+        {
+          "id": "agr-6",
+          "agreement": "Additional UI/UX revisions beyond the approved scope may incur extra charges.",
+          "order": 6
+        },
+        {
+          "id": "agr-7",
+          "agreement": "The client shall provide all required content, branding assets, credentials and third-party service access.",
+          "order": 7
+        },
+        {
+          "id": "agr-8",
+          "agreement": "Project timelines may extend due to delays in client approvals, feedback or pending deliverables.",
+          "order": 8
+        },
+        {
+          "id": "agr-9",
+          "agreement": "Source code ownership will be transferred only after full payment of the project.",
+          "order": 9
+        },
+        {
+          "id": "agr-10",
+          "agreement": "Production deployment will be performed after successful User Acceptance Testing (UAT).",
+          "order": 10
+        },
+        {
+          "id": "agr-11",
+          "agreement": "Support and services will be provided at no cost for a period of 30 days after the project rollout.",
+          "order": 11
+        },
+        {
+          "id": "agr-12",
+          "agreement": "Annual Maintenance Contract (AMC) and extended support will be provided under a separate agreement.",
+          "order": 12
+        },
+        {
+          "id": "agr-13",
+          "agreement": "This quotation is valid for 30 days from the issue date.",
+          "order": 13
+        }
+      ],
+      "versionHistory": [
+        {
+          "versionId": "v-1.0",
+          "versionNumber": 1,
+          "timestamp": "2026-09-01T12:09:46.555Z",
+          "author": "System Administrator",
+          "notes": "Initial master template standard creation.",
+          "snapshot": {
+            "requirements": [
+              {
+                "id": "req-1",
+                "requirement": "Functional Requirement Document (FRD)",
+                "when": "Before project commencement",
+                "responsibility": "Client",
+                "enabled": true,
+                "order": 1
+              },
+              {
+                "id": "req-2",
+                "requirement": "User Stories & Business Workflows",
+                "when": "Before project commencement",
+                "responsibility": "Client",
+                "enabled": true,
+                "order": 2
+              },
+              {
+                "id": "req-3",
+                "requirement": "UI/UX Design Approval",
+                "when": "Before project commencement",
+                "responsibility": "Client",
+                "enabled": true,
+                "order": 3
+              },
+              {
+                "id": "req-4",
+                "requirement": "Brand Assets (Logo, Images, Icons & Content)",
+                "when": "Before project commencement",
+                "responsibility": "Client",
+                "enabled": true,
+                "order": 4
+              },
+              {
+                "id": "req-5",
+                "requirement": "Domain & DNS Access",
+                "when": "Before deployment",
+                "responsibility": "Client",
+                "enabled": true,
+                "order": 5
+              },
+              {
+                "id": "req-6",
+                "requirement": "Server / VPS Access",
+                "when": "Before deployment",
+                "responsibility": "Client",
+                "enabled": true,
+                "order": 6
+              },
+              {
+                "id": "req-7",
+                "requirement": "WhatsApp Business API",
+                "when": "Before integration",
+                "responsibility": "Client",
+                "enabled": true,
+                "order": 7
+              },
+              {
+                "id": "req-8",
+                "requirement": "SMS Gateway Credentials",
+                "when": "Before integration",
+                "responsibility": "Client",
+                "enabled": true,
+                "order": 8
+              },
+              {
+                "id": "req-9",
+                "requirement": "Payment Gateway Credentials",
+                "when": "Before integration",
+                "responsibility": "Client",
+                "enabled": true,
+                "order": 9
+              }
+            ],
+            "deliverables": [
+              {
+                "id": "del-1",
+                "deliverable": "Complete Source Code",
+                "stage": "Maintenance",
+                "responsibility": "Nutz",
+                "order": 1
+              },
+              {
+                "id": "del-2",
+                "deliverable": "Deployment & Production Rollout",
+                "stage": "Maintenance",
+                "responsibility": "Nutz",
+                "order": 2
+              },
+              {
+                "id": "del-3",
+                "deliverable": "Knowledge Transfer",
+                "stage": "Maintenance",
+                "responsibility": "Nutz",
+                "order": 3
+              },
+              {
+                "id": "del-4",
+                "deliverable": "30 Days Support & Maintenance",
+                "stage": "Maintenance",
+                "responsibility": "Nutz",
+                "order": 4
+              },
+              {
+                "id": "del-5",
+                "deliverable": "Server Credentials, User Manuals, Configuration Documents & Deployment Guides",
+                "stage": "Maintenance",
+                "responsibility": "Nutz",
+                "order": 5
+              },
+              {
+                "id": "del-6",
+                "deliverable": "Architecture Documents, API Documentation, Database Design, UI/UX Assets & Technical Guides",
+                "stage": "Maintenance",
+                "responsibility": "Nutz",
+                "order": 6
+              }
+            ],
+            "communication": [
+              {
+                "id": "comm-1",
+                "function": "Development Sync & Updates",
+                "means": "GitHub, Google Meet, In Person",
+                "notes": "Sprint planning, development tracking and technical discussions",
+                "order": 1
+              },
+              {
+                "id": "comm-2",
+                "function": "Project Updates",
+                "means": "WhatsApp, Email, Phone Calls",
+                "notes": "Official communication, approvals and project status updates",
+                "order": 2
+              }
+            ],
+            "additionalPricing": [
+              {
+                "id": "price-1",
+                "function": "Domain Registration",
+                "provider": "Third Party",
+                "estimate": "Need to be Purchased",
+                "notes": "Standard third-party commercial rate",
+                "order": 1
+              },
+              {
+                "id": "price-2",
+                "function": "Hosting / VPS",
+                "provider": "AWS / DigitalOcean / Cloud Provider",
+                "estimate": "Need to be Purchased",
+                "notes": "Standard third-party commercial rate",
+                "order": 2
+              },
+              {
+                "id": "price-3",
+                "function": "SMS Gateway",
+                "provider": "Third Party",
+                "estimate": "Based on Usage",
+                "notes": "Standard third-party commercial rate",
+                "order": 3
+              },
+              {
+                "id": "price-4",
+                "function": "WhatsApp Business API",
+                "provider": "Meta / BSP",
+                "estimate": "Based on Conversation Charges",
+                "notes": "Standard third-party commercial rate",
+                "order": 4
+              }
+            ],
+            "agreements": [
+              {
+                "id": "agr-1",
+                "agreement": "Phase 1 payment must be completed before project commencement.",
+                "order": 1
+              },
+              {
+                "id": "agr-2",
+                "agreement": "Advance payment for each phase is non-refundable once development has commenced.",
+                "order": 2
+              },
+              {
+                "id": "agr-3",
+                "agreement": "The project timeline begins only after receipt of all required assets, approvals and Phase 1 payment.",
+                "order": 3
+              },
+              {
+                "id": "agr-4",
+                "agreement": "Each subsequent phase will commence only after successful completion, client approval and payment of the previous phase.",
+                "order": 4
+              },
+              {
+                "id": "agr-5",
+                "agreement": "Any additional requirements beyond the approved Functional Requirement Document (FRD) shall be treated as Change Requests and quoted separately.",
+                "order": 5
+              },
+              {
+                "id": "agr-6",
+                "agreement": "Additional UI/UX revisions beyond the approved scope may incur extra charges.",
+                "order": 6
+              },
+              {
+                "id": "agr-7",
+                "agreement": "The client shall provide all required content, branding assets, credentials and third-party service access.",
+                "order": 7
+              },
+              {
+                "id": "agr-8",
+                "agreement": "Project timelines may extend due to delays in client approvals, feedback or pending deliverables.",
+                "order": 8
+              },
+              {
+                "id": "agr-9",
+                "agreement": "Source code ownership will be transferred only after full payment of the project.",
+                "order": 9
+              },
+              {
+                "id": "agr-10",
+                "agreement": "Production deployment will be performed after successful User Acceptance Testing (UAT).",
+                "order": 10
+              },
+              {
+                "id": "agr-11",
+                "agreement": "Support and services will be provided at no cost for a period of 30 days after the project rollout.",
+                "order": 11
+              },
+              {
+                "id": "agr-12",
+                "agreement": "Annual Maintenance Contract (AMC) and extended support will be provided under a separate agreement.",
+                "order": 12
+              },
+              {
+                "id": "agr-13",
+                "agreement": "This quotation is valid for 30 days from the issue date.",
+                "order": 13
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "id": "tpl-fast-track",
+      "name": "FastTrack MVP & Rapid Prototype Standard",
+      "description": "Lightweight specification template optimized for rapid 30-day MVP releases.",
+      "isDefault": false,
+      "companyInfo": {
+        "name": "Nutz Technovation Private Limited",
+        "developmentTeam": "Nutz Technovation Private Limited",
+        "defaultDuration": "60 Working Days",
+        "tagline": "making sense",
+        "supportDays": 30
+      },
+      "requirements": [
+        {
+          "id": "req-1",
+          "requirement": "Functional Requirement Document (FRD)",
+          "when": "Before project commencement",
+          "responsibility": "Client",
+          "enabled": true,
+          "order": 1
+        },
+        {
+          "id": "req-2",
+          "requirement": "User Stories & Business Workflows",
+          "when": "Before project commencement",
+          "responsibility": "Client",
+          "enabled": true,
+          "order": 2
+        },
+        {
+          "id": "req-3",
+          "requirement": "UI/UX Design Approval",
+          "when": "Before project commencement",
+          "responsibility": "Client",
+          "enabled": true,
+          "order": 3
+        },
+        {
+          "id": "req-4",
+          "requirement": "Brand Assets (Logo, Images, Icons & Content)",
+          "when": "Before project commencement",
+          "responsibility": "Client",
+          "enabled": true,
+          "order": 4
+        },
+        {
+          "id": "req-5",
+          "requirement": "Domain & DNS Access",
+          "when": "Before deployment",
+          "responsibility": "Client",
+          "enabled": true,
+          "order": 5
+        },
+        {
+          "id": "req-6",
+          "requirement": "Server / VPS Access",
+          "when": "Before deployment",
+          "responsibility": "Client",
+          "enabled": true,
+          "order": 6
+        }
+      ],
+      "deliverables": [
+        {
+          "id": "del-1",
+          "deliverable": "Complete Source Code",
+          "stage": "Maintenance",
+          "responsibility": "Nutz",
+          "order": 1
+        },
+        {
+          "id": "del-2",
+          "deliverable": "Deployment & Production Rollout",
+          "stage": "Maintenance",
+          "responsibility": "Nutz",
+          "order": 2
+        },
+        {
+          "id": "del-3",
+          "deliverable": "Knowledge Transfer",
+          "stage": "Maintenance",
+          "responsibility": "Nutz",
+          "order": 3
+        },
+        {
+          "id": "del-4",
+          "deliverable": "30 Days Support & Maintenance",
+          "stage": "Maintenance",
+          "responsibility": "Nutz",
+          "order": 4
+        }
+      ],
+      "techStack": {
+        "frontendFramework": "Next.js",
+        "backendRuntime": "Node.js",
+        "backendFramework": "Express.js",
+        "database": "PostgreSQL",
+        "orm": "Sequelize",
+        "programmingLanguage": "TypeScript",
+        "uiFramework": "Tailwind CSS",
+        "uiComponents": "Shadcn/UI",
+        "hosting": "VPS / Cloud",
+        "versionControl": "GitHub",
+        "ciCd": "GitHub Actions"
+      },
+      "communication": [
+        {
+          "id": "comm-1",
+          "function": "Development Sync & Updates",
+          "means": "GitHub, Google Meet, In Person",
+          "notes": "Sprint planning, development tracking and technical discussions",
+          "order": 1
+        },
+        {
+          "id": "comm-2",
+          "function": "Project Updates",
+          "means": "WhatsApp, Email, Phone Calls",
+          "notes": "Official communication, approvals and project status updates",
+          "order": 2
+        }
+      ],
+      "additionalPricing": [
+        {
+          "id": "price-1",
+          "function": "Domain Registration",
+          "provider": "Third Party",
+          "estimate": "Need to be Purchased",
+          "notes": "Standard third-party commercial rate",
+          "order": 1
+        },
+        {
+          "id": "price-2",
+          "function": "Hosting / VPS",
+          "provider": "AWS / DigitalOcean / Cloud Provider",
+          "estimate": "Need to be Purchased",
+          "notes": "Standard third-party commercial rate",
+          "order": 2
+        },
+        {
+          "id": "price-3",
+          "function": "SMS Gateway",
+          "provider": "Third Party",
+          "estimate": "Based on Usage",
+          "notes": "Standard third-party commercial rate",
+          "order": 3
+        },
+        {
+          "id": "price-4",
+          "function": "WhatsApp Business API",
+          "provider": "Meta / BSP",
+          "estimate": "Based on Conversation Charges",
+          "notes": "Standard third-party commercial rate",
+          "order": 4
+        }
+      ],
+      "architectureFlows": {
+        "overallSystemFlow": "[ Client Devices / Browsers ]\n       │  (HTTPS / REST / WebSocket)\n       ▼\n[ Cloud Edge / CDN & API Gateway ]\n       │  (JWT Auth & Rate Limiting)\n       ▼\n[ Core Application Services Engine ]\n       │  (Microservices & Business Logic)\n       ├──► [ Primary SQL Database (PostgreSQL) ]\n       ├──► [ Memory Cache & Queue (Redis) ]\n       └──► [ Third-Party Integrations (SMS/Email/Payments) ]",
+        "highLevelArchitectureFlow": "+-----------------------------------------------------------+\n|                    PRESENTATION TIER                      |\n|  Next.js 14 Responsive Web App • Shadcn/UI • Tailwind     |\n+-----------------------------┬-----------------------------+\n                              │ REST / JSON APIs\n+-----------------------------▼-----------------------------+\n|                     APPLICATION TIER                      |\n|  Node.js / Express Backend • Business Rules Engine        |\n|  Role-Based Access Control • Audit Logging Service        |\n+-----------------------------┬-----------------------------+\n                              │ Prisma / Sequelize ORM\n+-----------------------------▼-----------------------------+\n|                      DATA STORE TIER                      |\n|  PostgreSQL RDBMS • Cloud Storage • Third-Party Gateways  |\n+-----------------------------------------------------------+",
+        "adminFlow": "[ Administrator Login ] ──► [ Multi-Factor Authentication ]\n                                    │\n                                    ▼\n                          [ Admin Control Console ]\n                                    │\n    ┌───────────────────────────────┼───────────────────────────────┐\n    ▼                               ▼                               ▼\n[ User & Role Management ]   [ Data Inspection & CMS ]   [ Audit Logs & Reports ]",
+        "phaseWiseFlow": "Phase 1 (Setup & Specs)    ──► Requirements Sign-off & Architecture Setup\nPhase 2 (Core Modules)     ──► Core Engine, Database Schemas & API Layer\nPhase 3 (Integrations)     ──► Third-Party APIs, UI Workflows & Notifications\nPhase 4 (UAT & Rollout)    ──► Quality Assurance, Production Deployment & SLA Handover"
+      },
+      "scopeDefaults": {
+        "strategicObjectives": "Deliver a robust, scalable, enterprise-grade digital platform engineered for high performance, modular maintainability, and seamless stakeholder workflows.",
+        "corporateProfile": "Enterprise Corporate Entity Profile and Business Transformation Footprint.",
+        "domainsFootprint": "Comprehensive Modular Web and Cloud Platform Footprint."
+      },
+      "implementationPhases": [
+        {
+          "phase": 1,
+          "title": "Phase 1: Architecture Blueprint, Entity Schema & Setup",
+          "duration": "15 Working Days",
+          "modules": [
+            "Infrastructure Provisioning",
+            "Database Schemas",
+            "Authentication & Security"
+          ],
+          "description": "Project kick-off, environment configuration, database structure design, and base API frameworks."
+        },
+        {
+          "phase": 2,
+          "title": "Phase 2: Core Capability Modules & Data Management",
+          "duration": "15 Working Days",
+          "modules": [
+            "Domain Operations",
+            "Business Workflows",
+            "API Endpoints"
+          ],
+          "description": "Implementation of primary business modules, transaction pipelines, and core functional services."
+        },
+        {
+          "phase": 3,
+          "title": "Phase 3: Integrations, User Portals & Automation",
+          "duration": "15 Working Days",
+          "modules": [
+            "External Gateways",
+            "User Portals",
+            "Notification Services"
+          ],
+          "description": "Third-party gateway integrations, responsive web interfaces, and automated notification services."
+        },
+        {
+          "phase": 4,
+          "title": "Phase 4: End-to-End Testing, UAT, Deployment & Handover",
+          "duration": "15 Working Days",
+          "modules": [
+            "Quality Assurance",
+            "Production Rollout",
+            "30-Day Support Initiation"
+          ],
+          "description": "Comprehensive testing, security hardening, user acceptance sign-off, live deployment, and warranty commencement."
+        }
+      ],
+      "paymentSplitups": {
+        "40-30-30": {
+          "type": "40-30-30",
+          "totalDurationDays": 60,
+          "milestones": [
+            {
+              "name": "Advance Payment (40%)",
+              "percentage": 40,
+              "timing": "Before Project Commencement"
+            },
+            {
+              "name": "Midway Milestone (30%)",
+              "percentage": 30,
+              "timing": "At 30 Working Days"
+            },
+            {
+              "name": "Project Completion (30%)",
+              "percentage": 30,
+              "timing": "After UAT & Handover"
+            }
+          ]
+        },
+        "50-50": {
+          "type": "50-50",
+          "totalDurationDays": 60,
+          "milestones": [
+            {
+              "name": "Advance Payment (50%)",
+              "percentage": 50,
+              "timing": "Before Project Commencement"
+            },
+            {
+              "name": "Project Completion (50%)",
+              "percentage": 50,
+              "timing": "After UAT & Handover"
+            }
+          ]
+        },
+        "40-20-20-20": {
+          "type": "40-20-20-20",
+          "totalDurationDays": 60,
+          "milestones": [
+            {
+              "name": "Phase 1 Advance (40%)",
+              "percentage": 40,
+              "timing": "Before Phase 1 Commencement"
+            },
+            {
+              "name": "Phase 2 Milestone (20%)",
+              "percentage": 20,
+              "timing": "Upon Phase 1 Delivery & Phase 2 Start"
+            },
+            {
+              "name": "Phase 3 Milestone (20%)",
+              "percentage": 20,
+              "timing": "Upon Phase 2 Delivery & Phase 3 Start"
+            },
+            {
+              "name": "Final Release & Handover (20%)",
+              "percentage": 20,
+              "timing": "After UAT, Handover & Deployment"
+            }
+          ]
+        }
+      },
+      "standardExclusions": [
+        "Domain Registration Charges",
+        "Hosting & Cloud Server Charges",
+        "Third-party API Charges",
+        "SMS Credits",
+        "WhatsApp Conversation Charges",
+        "Payment Gateway Transaction Charges",
+        "Government Registration Fees",
+        "Additional Modules",
+        "Change Requests Beyond Approved Scope",
+        "Native iOS & Android Mobile Applications and App Store / Play Store Submissions (Scope is restricted to Responsive Web Application).",
+        "Payment Gateway Direct Merchant Settlement, Automated Recurring Subscriptions, and PCI-DSS Financial Banking Compliance.",
+        "Third-Party Hardware Devices, POS Thermal Receipt Printers, Biometric Terminals, and IoT Sensor Firmware.",
+        "Custom Machine Learning Model Fine-Tuning and Dedicated GPU Training Cluster Maintenance.",
+        "Multi-Tenant Enterprise White-Labeling and Wildcard Sub-Domain DNS Automation.",
+        "Mass WhatsApp Marketing Broadcasting API Infrastructure and Cold Email Warmup Services.",
+        "Manual Data Entry, Legacy Database Cleansing, and Historical Paper Document OCR Scanning."
+      ],
+      "agreements": [
+        {
+          "id": "agr-1",
+          "agreement": "Phase 1 payment must be completed before project commencement.",
+          "order": 1
+        },
+        {
+          "id": "agr-2",
+          "agreement": "Advance payment for each phase is non-refundable once development has commenced.",
+          "order": 2
+        },
+        {
+          "id": "agr-3",
+          "agreement": "The project timeline begins only after receipt of all required assets, approvals and Phase 1 payment.",
+          "order": 3
+        },
+        {
+          "id": "agr-4",
+          "agreement": "Each subsequent phase will commence only after successful completion, client approval and payment of the previous phase.",
+          "order": 4
+        },
+        {
+          "id": "agr-5",
+          "agreement": "Any additional requirements beyond the approved Functional Requirement Document (FRD) shall be treated as Change Requests and quoted separately.",
+          "order": 5
+        },
+        {
+          "id": "agr-6",
+          "agreement": "Additional UI/UX revisions beyond the approved scope may incur extra charges.",
+          "order": 6
+        },
+        {
+          "id": "agr-7",
+          "agreement": "The client shall provide all required content, branding assets, credentials and third-party service access.",
+          "order": 7
+        },
+        {
+          "id": "agr-8",
+          "agreement": "Project timelines may extend due to delays in client approvals, feedback or pending deliverables.",
+          "order": 8
+        },
+        {
+          "id": "agr-9",
+          "agreement": "Source code ownership will be transferred only after full payment of the project.",
+          "order": 9
+        },
+        {
+          "id": "agr-10",
+          "agreement": "Production deployment will be performed after successful User Acceptance Testing (UAT).",
+          "order": 10
+        },
+        {
+          "id": "agr-11",
+          "agreement": "Support and services will be provided at no cost for a period of 30 days after the project rollout.",
+          "order": 11
+        },
+        {
+          "id": "agr-12",
+          "agreement": "Annual Maintenance Contract (AMC) and extended support will be provided under a separate agreement.",
+          "order": 12
+        },
+        {
+          "id": "agr-13",
+          "agreement": "This quotation is valid for 30 days from the issue date.",
+          "order": 13
+        }
+      ],
+      "versionHistory": [
+        {
+          "versionId": "v-1.0-fasttrack",
+          "versionNumber": 1,
+          "timestamp": "2026-09-01T12:09:46.556Z",
+          "author": "System Administrator",
+          "notes": "Pre-seeded FastTrack MVP template.",
+          "snapshot": {
+            "requirements": [
+              {
+                "id": "req-1",
+                "requirement": "Functional Requirement Document (FRD)",
+                "when": "Before project commencement",
+                "responsibility": "Client",
+                "enabled": true,
+                "order": 1
+              },
+              {
+                "id": "req-2",
+                "requirement": "User Stories & Business Workflows",
+                "when": "Before project commencement",
+                "responsibility": "Client",
+                "enabled": true,
+                "order": 2
+              },
+              {
+                "id": "req-3",
+                "requirement": "UI/UX Design Approval",
+                "when": "Before project commencement",
+                "responsibility": "Client",
+                "enabled": true,
+                "order": 3
+              },
+              {
+                "id": "req-4",
+                "requirement": "Brand Assets (Logo, Images, Icons & Content)",
+                "when": "Before project commencement",
+                "responsibility": "Client",
+                "enabled": true,
+                "order": 4
+              },
+              {
+                "id": "req-5",
+                "requirement": "Domain & DNS Access",
+                "when": "Before deployment",
+                "responsibility": "Client",
+                "enabled": true,
+                "order": 5
+              },
+              {
+                "id": "req-6",
+                "requirement": "Server / VPS Access",
+                "when": "Before deployment",
+                "responsibility": "Client",
+                "enabled": true,
+                "order": 6
+              }
+            ],
+            "deliverables": [
+              {
+                "id": "del-1",
+                "deliverable": "Complete Source Code",
+                "stage": "Maintenance",
+                "responsibility": "Nutz",
+                "order": 1
+              },
+              {
+                "id": "del-2",
+                "deliverable": "Deployment & Production Rollout",
+                "stage": "Maintenance",
+                "responsibility": "Nutz",
+                "order": 2
+              },
+              {
+                "id": "del-3",
+                "deliverable": "Knowledge Transfer",
+                "stage": "Maintenance",
+                "responsibility": "Nutz",
+                "order": 3
+              },
+              {
+                "id": "del-4",
+                "deliverable": "30 Days Support & Maintenance",
+                "stage": "Maintenance",
+                "responsibility": "Nutz",
+                "order": 4
+              }
+            ],
+            "communication": [
+              {
+                "id": "comm-1",
+                "function": "Development Sync & Updates",
+                "means": "GitHub, Google Meet, In Person",
+                "notes": "Sprint planning, development tracking and technical discussions",
+                "order": 1
+              },
+              {
+                "id": "comm-2",
+                "function": "Project Updates",
+                "means": "WhatsApp, Email, Phone Calls",
+                "notes": "Official communication, approvals and project status updates",
+                "order": 2
+              }
+            ],
+            "additionalPricing": [
+              {
+                "id": "price-1",
+                "function": "Domain Registration",
+                "provider": "Third Party",
+                "estimate": "Need to be Purchased",
+                "notes": "Standard third-party commercial rate",
+                "order": 1
+              },
+              {
+                "id": "price-2",
+                "function": "Hosting / VPS",
+                "provider": "AWS / DigitalOcean / Cloud Provider",
+                "estimate": "Need to be Purchased",
+                "notes": "Standard third-party commercial rate",
+                "order": 2
+              },
+              {
+                "id": "price-3",
+                "function": "SMS Gateway",
+                "provider": "Third Party",
+                "estimate": "Based on Usage",
+                "notes": "Standard third-party commercial rate",
+                "order": 3
+              },
+              {
+                "id": "price-4",
+                "function": "WhatsApp Business API",
+                "provider": "Meta / BSP",
+                "estimate": "Based on Conversation Charges",
+                "notes": "Standard third-party commercial rate",
+                "order": 4
+              }
+            ],
+            "agreements": [
+              {
+                "id": "agr-1",
+                "agreement": "Phase 1 payment must be completed before project commencement.",
+                "order": 1
+              },
+              {
+                "id": "agr-2",
+                "agreement": "Advance payment for each phase is non-refundable once development has commenced.",
+                "order": 2
+              },
+              {
+                "id": "agr-3",
+                "agreement": "The project timeline begins only after receipt of all required assets, approvals and Phase 1 payment.",
+                "order": 3
+              },
+              {
+                "id": "agr-4",
+                "agreement": "Each subsequent phase will commence only after successful completion, client approval and payment of the previous phase.",
+                "order": 4
+              },
+              {
+                "id": "agr-5",
+                "agreement": "Any additional requirements beyond the approved Functional Requirement Document (FRD) shall be treated as Change Requests and quoted separately.",
+                "order": 5
+              },
+              {
+                "id": "agr-6",
+                "agreement": "Additional UI/UX revisions beyond the approved scope may incur extra charges.",
+                "order": 6
+              },
+              {
+                "id": "agr-7",
+                "agreement": "The client shall provide all required content, branding assets, credentials and third-party service access.",
+                "order": 7
+              },
+              {
+                "id": "agr-8",
+                "agreement": "Project timelines may extend due to delays in client approvals, feedback or pending deliverables.",
+                "order": 8
+              },
+              {
+                "id": "agr-9",
+                "agreement": "Source code ownership will be transferred only after full payment of the project.",
+                "order": 9
+              },
+              {
+                "id": "agr-10",
+                "agreement": "Production deployment will be performed after successful User Acceptance Testing (UAT).",
+                "order": 10
+              },
+              {
+                "id": "agr-11",
+                "agreement": "Support and services will be provided at no cost for a period of 30 days after the project rollout.",
+                "order": 11
+              },
+              {
+                "id": "agr-12",
+                "agreement": "Annual Maintenance Contract (AMC) and extended support will be provided under a separate agreement.",
+                "order": 12
+              },
+              {
+                "id": "agr-13",
+                "agreement": "This quotation is valid for 30 days from the issue date.",
+                "order": 13
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
